@@ -1,17 +1,16 @@
 import './App.css';
-import ProductListing from './ProductListing'
+import ProductsRow from './ProductsRow'
+import productsList from './data/productsList';
 
 function App() {
+
+
+
   return (
     <>
-    <h1>
-      App
-    </h1>
-    <ProductListing />
-    <ProductListing />
-    <ProductListing />
-    <ProductListing />
-    <ProductListing />
+    <ProductsRow title="Still interested?" style={'big'} items={productsList} />
+    <ProductsRow title="New Arrivals" style={'indented'} items={productsList} />
+    <ProductsRow title="BEST OF ADIDAS" style={'indented'} items={productsList} />
     </>
   );
 }

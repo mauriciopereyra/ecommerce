@@ -1,0 +1,18 @@
+.slider-button-group {
+    display:inline-block;
+    float:right;
+    font-size:1.7em;
+    margin-right: 1.5em;
+}
+
+.slider-button {
+    display:inline-block;
+    padding: 0.25em 0.45em;
+    cursor:pointer;
+    transition: 0.2s;
+}
+
+.slider-button:hover {
+    color: white;
+    background: black;
+}
