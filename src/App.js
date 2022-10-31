@@ -4,7 +4,7 @@ import productsList from './data/productsList';
 import Banner from './Banner';
 import { banner_adiclub, banner_thebe } from './data/images'
 import categoryCards from './data/categoryCards';
-import CategoryCard from './CategoryCard';
+import { whatsHotCards, trendingCards } from './data/teaserCards';
 
 function App() {
 
@@ -15,7 +15,9 @@ function App() {
     <Row type='product' title="Still interested?" style={'big'} items={productsList.concat(productsList)} />
     <Row type='category' title={["WOMEN","MEN","KIDS"]} style={'indented'} items={[categoryCards,categoryCards,categoryCards]} />
     <Row type='product' title={["New Arrivals","What's trending","Release dates"]} style={'indented'} items={[productsList,productsList,productsList]} />
+    <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />
     <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={productsList.concat(productsList)} />
+    <Row type='teaser' title="TRENDING" style={'indented wrapped'} items={trendingCards} />
     </>
   );
 }

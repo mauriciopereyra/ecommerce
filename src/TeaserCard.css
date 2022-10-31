@@ -1,0 +1,54 @@
+.teaser-card {
+    width: 300px;
+    margin: 0 1em 0 0;
+    cursor: pointer;
+    transition: 0.5s ease-in-out transform;
+}
+
+.teaser-media {
+    width: 300px;
+    height: 400px;
+}
+
+.teaser-media img, .teaser-media video {
+    width: 100%;
+    height: 100%;
+}
+
+.teaser-text {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.teaser-title {
+    font-weight: bold;
+    margin-top: 1em;
+    white-space: normal;
+}
+
+.teaser-description {
+    font-size: 0.8em;
+    width:100%;
+    flex-grow: 2;
+    margin-top: 1.5em;    
+    white-space: normal;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.teaser-cta p {
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-decoration-line: underline;
+    display: inline-block;
+    transition: color 0.2s, background 0.2s;
+    font-size: 0.9em;
+}
+
+.teaser-cta p:hover {
+    background:black;
+    color: white;
+    text-decoration-line: none;
+}

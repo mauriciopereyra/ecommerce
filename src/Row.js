@@ -3,6 +3,7 @@ import './Row.css'
 import SliderButtons from './SliderButtons'
 import { useEffect, useState } from 'react'
 import CategoryCard from "./CategoryCard"
+import TeaserCard from "./TeaserCard"
 
 const Row = (props) => {
 
@@ -12,9 +13,18 @@ const Row = (props) => {
     const nextPage = () => setPage(currentPage + 1)
 
     const renderListings = (items,tab=0) => {
-        return items.map((item) => item.type == 'category' ? <CategoryCard visible={activeTab == tab} currentPage={currentPage} title={item.title} /> : <ProductListing visible={activeTab == tab} currentPage={currentPage} title={item.title}  type={props.type} collection={item.collection} price={item.price} image={item.image}/>)
-      }
-
+        const style = {'transform':`translateX(calc(${-currentPage*4}00% + ${-currentPage*4}em))`}
+        return items.map((item) => {
+            switch (item.type) {
+                case 'category':
+                    return <CategoryCard visible={activeTab == tab} currentPage={currentPage} title={item.title} style={style} /> 
+                default:
+                    return props.type == "teaser" ? 
+                           <TeaserCard currentPage={currentPage} title={item.title} description={item.description}  media={item.media} style={style} /> : 
+                           <ProductListing visible={activeTab == tab} currentPage={currentPage} title={item.title}  type={props.type} collection={item.collection} price={item.price} image={item.image} style={style} />
+            }
+        })
+    }
     const renderTitles = (titles) => {
         return titles.map((title,index) => 
             <h1 onClick={() => 

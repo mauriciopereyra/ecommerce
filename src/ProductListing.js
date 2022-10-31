@@ -7,7 +7,7 @@ const ProductListing = (props) => {
     return (
         <div className={`product-listing 
             ${props.type=='category' ? 'category' : ''}`} 
-            style={{'display':`${props.visible ? 'initial' : 'none'}`,'transform':`translateX(calc(${-props.currentPage*4}00% + ${-props.currentPage*4}em))`}}
+            style={{...props.style,'display':`${props.visible ? 'initial' : 'none'}`}}
         >
             <div className="product-listing-image">
                 <img src={props.image}></img>
