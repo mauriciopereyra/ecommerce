@@ -11,12 +11,25 @@ const Row = (props) => {
     const prevPage = () => setPage(currentPage - 1)
     const nextPage = () => setPage(currentPage + 1)
 
-    const renderListings = (items) => {
-        return items.map((item) => item.type == 'category' ? <CategoryCard currentPage={currentPage} title={item.title} /> : <ProductListing currentPage={currentPage} title={item.title}  type={props.type} collection={item.collection} price={item.price} image={item.image}/>)
+    const renderListings = (items,tab=0) => {
+        return items.map((item) => item.type == 'category' ? <CategoryCard visible={activeTab == tab} currentPage={currentPage} title={item.title} /> : <ProductListing visible={activeTab == tab} currentPage={currentPage} title={item.title}  type={props.type} collection={item.collection} price={item.price} image={item.image}/>)
       }
 
     const renderTitles = (titles) => {
-        return titles.map((title,index) => <h1 onClick={() => setActiveTab(index)} className={`tab-title ${index==activeTab ? "active" : ""}`}>{title}</h1>)
+        return titles.map((title,index) => 
+            <h1 onClick={() => 
+                {setActiveTab(index)
+                setPage(0)}
+            } 
+            className={`tab-title ${index==activeTab ? "active" : ""}`}>{title}</h1>)
+    }
+
+    const renderRows = (rows) => {
+        if (Array.isArray(props.title)){
+            return rows.map((row, index) => renderListings(row,index))
+        } else {
+            return renderListings(rows)
+        }
     }
 
       return (
@@ -32,7 +45,7 @@ const Row = (props) => {
                 <SliderButtons prevPage={prevPage} nextPage={nextPage} />
             </div>  
             <div className="row-items">
-                {renderListings(props.items)}
+                {renderRows(props.items)}
             </div>
         </div>
       )
