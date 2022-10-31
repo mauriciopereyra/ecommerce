@@ -4,7 +4,7 @@
     height: 340px;
     cursor: pointer;
     border: 1px solid white;
-    transition: 1s ease-in-out transform;
+    transition: 0.5s ease-in-out transform;
 }
 
 .product-listing:hover {

@@ -1,4 +1,5 @@
-const productsList = [{
+const productsList = [
+  {
     title: "Ultraboost 22 Shoes",
     collection: "Performance",
     price: ["$2,000"],

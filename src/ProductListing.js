@@ -5,7 +5,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 const ProductListing = (props) => {
     return (
-        <div className="product-listing">
+        <div className="product-listing" style={{'transform':`translateX(calc(${-props.currentPage*4}00% + ${-props.currentPage*4}em))`}}>
             <div className="product-listing-image">
                 <img src={props.image}></img>
                 <FontAwesomeIcon className="product-listing-heart" icon={faHeart} />

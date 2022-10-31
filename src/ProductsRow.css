@@ -9,7 +9,7 @@
 }
 
 .products-row h1 {
-    margin-left: 1.7em;
+    margin-left: 3rem;
     display: inline-block;
 }
 
@@ -17,10 +17,11 @@
     margin-top: 1em;
     overflow: hidden;
     white-space: nowrap;
+    display:flex;
 }
 
 .indented {
-    margin-left: 3em;
+    margin-left: 3rem;
 }
 
 .indented h1 {

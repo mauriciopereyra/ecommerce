@@ -1,0 +1,17 @@
+.banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;   
+    display:flex;
+    align-items: center;
+}
+
+.banner-description {
+    width: 30%;
+    margin-left: 3rem;
+    line-height: 1.5;
+}
+
+.banner-description h1 {
+    line-height: 1;
+}
