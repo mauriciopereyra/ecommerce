@@ -1,19 +1,19 @@
-.products-row {
+.row {
     margin-top: 4em;
 }
 
-.products-row-title {
+.row-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.products-row h1 {
+.row h1 {
     margin-left: 3rem;
     display: inline-block;
 }
 
-.products-listing-list {
+.row-items {
     margin-top: 1em;
     overflow: hidden;
     white-space: nowrap;
@@ -28,3 +28,12 @@
     margin-left: 0;
 }
 
+.tab-title {
+    margin-right:1.5em;
+    cursor: pointer;
+    opacity: 0.25;
+}
+
+.tab-title.active {
+    opacity:1;
+}

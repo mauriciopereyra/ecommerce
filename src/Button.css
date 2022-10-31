@@ -1,20 +1,33 @@
-.button1, .button1::before {
+.button1 {
+    width: 152px;
+}
+
+.button2 {
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    border: solid black 1px;
+}
+
+.button1, .button2, .button1::before {
     background-color: white;
     font-weight: bold;
     padding: 1.2em 1.5em;
-    border:0;
     cursor: pointer;
-    transition: color 0.2s;
     letter-spacing: 2px;
+    transition: left 0.2s, top 0.2s, color 0.2s;
+}
+
+.button1, .button1::before {
+    border:0;
     position:relative;
     white-space: nowrap;
     overflow: visible;
     top:0;
     left:0;
-    transition: left 0.2s, top 0.2s;
 }
 
-.button1:hover {
+.button1:hover, .button2:hover {
     color: gray;
 }
 

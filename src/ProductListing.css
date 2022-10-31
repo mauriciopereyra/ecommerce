@@ -1,7 +1,6 @@
 .product-listing {
     display: inline-block;
     margin: 0 1em 0 0;
-    height: 340px;
     cursor: pointer;
     border: 1px solid white;
     transition: 0.5s ease-in-out transform;
@@ -24,6 +23,7 @@
 
 .product-listing-text {
     padding: 0.5em;
+    height: 70px;
 }
 .product-listing-title {
     margin-top:0.1em;
@@ -63,6 +63,22 @@
     height:350px;
     width:350px;
 }
-.big .product-listing {
-    height:440px;
+.big .product-listing-text {
+    height: 74px;
+}
+
+/* Category style */
+.category {
+    background: #eceff1;
+}
+
+.category .product-listing-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+.category .product-listing-title {
+ text-align:center;   
+ font-weight: bold;
 }

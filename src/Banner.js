@@ -11,7 +11,7 @@ const Banner = (props) => {
             <div className='banner-description'>
                 {props.title ? <h1>{props.title}</h1> : ""}
                 {props.description ? <p>{props.description}</p> : ""}
-                {props.button ? <Button text={props.button} /> : ""}
+                {props.button ? <Button text={props.button} type={'button1'} /> : ""}
                 
             </div>
         </div>
