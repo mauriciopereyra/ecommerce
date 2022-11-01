@@ -1,0 +1,28 @@
+.bottom-footer {
+    background: #363738;
+    color: #a8abac;
+    font-size: 0.74rem;
+    padding: 1.25rem 0;
+}
+
+.bottom-footer ul {
+    padding:0;
+    margin:0;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-footer li {
+    list-style: none;
+    border-right: 1px solid #a8abac;
+    padding: 0.3rem 1rem;
+}
+
+.bottom-footer li:last-child {
+    border-right: none;
+}
+
+.bottom-footer a {
+    text-decoration: none;
+    color:inherit;
+}

@@ -79,3 +79,10 @@ export const bigFooter =
             ]
         },
     ]
+
+export const bottomFooter = [
+    'Privacy Policy',
+    'Terms and Conditions',
+    'Imprint',
+    '© 2020 adidas Thailand Co., Ltd.',
+]
