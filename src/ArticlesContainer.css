@@ -1,0 +1,27 @@
+.articles-container {
+    background: #f5f5e5;
+    margin-top: 2rem;
+    padding: 5rem 0;
+}
+
+.articles-wrapper {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 47% 47%;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    line-height: 1;
+    width: 75%;
+    min-height: 8rem;
+    margin: 0;
+}
+
+.article-content {
+    line-height: 1.4rem;
+    font-weight: 300;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    margin: 1.5rem 0 0;
+}
