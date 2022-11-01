@@ -11,7 +11,6 @@ const CallToAction = (props) => {
                 <div className='cta-button-wrapper'>
                     <Button text="SIGN UP FOR FREE" type='button1 black' />
                 </div>
-            <Button text="SHOP NOW" type='button1' />
             </div>
         </div>
     )
