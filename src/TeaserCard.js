@@ -6,7 +6,7 @@ const TeaserCard = (props) => {
             <div className='teaser-media'>
                 {props.media.type == 'image' ?
                 <img src={props.media.source}></img> :
-                <video loop={true} autoPlay muted playsinline={true} src={props.media.source}></video>
+                <video loop={true} autoPlay muted playsInline src={props.media.source}></video>
             }
             </div>
             <div className='teaser-text'>

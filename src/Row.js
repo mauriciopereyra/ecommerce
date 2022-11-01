@@ -1,12 +1,12 @@
 import ProductListing from "./ProductListing"
 import './Row.css'
 import SliderButtons from './SliderButtons'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import CategoryCard from "./CategoryCard"
 import TeaserCard from "./TeaserCard"
 
 const Row = (props) => {
-
+   
     const [ currentPage, setPage ] = useState(0)
     const [ activeTab, setActiveTab ] = useState(0)
     const prevPage = () => setPage(currentPage - 1)
@@ -44,8 +44,8 @@ const Row = (props) => {
 
       return (
         <div className={"row " + props.style}>
-            {/* <h1>Page {currentPage}</h1>
-            <h2>Items: {props.items.length}</h2> */}
+            {/* <h1>Page {currentPage}</h1> */}
+            {/* <h2>Items: {Array.isArray(props.title) ? props.items[activeTab].length : props.items.length}</h2> */}
             <div className="row-title">
                 {Array.isArray(props.title) ?
                  <div className="tab-list">
