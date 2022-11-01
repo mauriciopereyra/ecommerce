@@ -10,6 +10,8 @@ import { linksGroups1 } from './data/linksGroups'
 import { article1, article2 } from './data/articles';
 import ArticlesContainer from './ArticlesContainer'
 import CallToAction from './CallToAction';
+import BigFooter from './BigFooter';
+import { bigFooter } from './data/footer'
 
 function App() {
 
@@ -26,6 +28,7 @@ function App() {
     <LinksGroup title="NOW POPULAR IN MEN'S" items={linksGroups1} />
     <ArticlesContainer items={[article1,article2]} />
     <CallToAction text={"BECOME A MEMBER & GET 15% OFF"} />
+    <BigFooter items={bigFooter} />
     </>
   );
 }
