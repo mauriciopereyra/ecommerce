@@ -1,0 +1,22 @@
+.cta-container {
+    background: #ede734;
+}
+
+.cta-wrapper {
+    margin: 0 auto;
+    width: 66%;
+    display: grid;
+    align-items: baseline;
+    grid-template-columns: 50% 50%;
+    column-gap: 2%;
+    padding: 2.2rem 0;
+}
+
+.cta-text {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 2.1rem;
+}
+
+.cta-button-wrapper {
+}
