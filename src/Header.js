@@ -10,17 +10,19 @@ const Header = (props) => {
     }
 
     return (
-        <header className='header indented wrapped'>
-            <div className='top-row'>
-                <ul className='top-row-items'>
-                    {renderTopRow(props.topRow)}
-                </ul>
-            </div>
-            <div className='bottom-row'>
-                <a href='#' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
-                </a>
-                <MainMenu mainMenu={props.mainMenu} />
-                <HeaderIcons />              
+        <header className='header-container'>
+            <div className='header indented wrapped'>
+                <div className='top-row'>
+                    <ul className='top-row-items'>
+                        {renderTopRow(props.topRow)}
+                    </ul>
+                </div>
+                <div className='bottom-row'>
+                    <a href='#' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
+                    </a>
+                    <MainMenu mainMenu={props.mainMenu} />
+                    <HeaderIcons />              
+                </div>
             </div>
         </header>
     )

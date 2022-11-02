@@ -1,0 +1,116 @@
+.main-menu {
+    display:flex;
+}
+
+.main-menu-item {
+    margin-right: 1.5rem;
+    padding: 0.5rem 0;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    font-weight: 300;
+    border-bottom: solid transparent 0.2rem
+}
+
+.main-menu-item:hover {
+    border-bottom: solid black 0.2rem
+}
+
+.main-menu-item:hover .main-menu-category, .main-menu-category:hover {
+    display: flex;
+    visibility: visible;
+}
+
+.main-menu-item.bold {
+    font-weight: 500;
+}
+
+.main-menu-category {
+    position: absolute;
+    top: calc(5rem + 2px);
+    width: 100%;
+    left:0;
+    justify-content: center;
+    background: white;
+    z-index: 1;
+    border-top: 1px solid #e9e9e9;
+    display: flex;/* Set to flex for development */
+    visibility: hidden;
+    flex-direction: column;
+}
+
+.main-menu-category-wrapper {
+    width:80%;
+    display:flex; 
+    margin-left: 6rem;
+}
+
+.main-menu-subcategory {
+    flex: 1;
+    
+    padding: 2.3rem 0!important;
+}
+
+.main-menu-subcategory-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem!important;
+    margin-left: 1.5rem!important;
+    font-weight: bold;
+}
+
+.main-menu-subcategory-item {
+    font-weight: 300;
+    font-size: 0.80rem;
+    margin-bottom: 0.39rem!important;
+    margin-left: 1.5rem!important;
+}
+
+.main-menu-subcategory-title:hover, .main-menu-subcategory-item:hover, .main-menu-category-footer-item:hover {
+    text-decoration: underline;
+}
+
+.featured-subcategory {
+    flex-basis:10%;
+    border-right: 1px solid #e9e9e9
+}
+
+.horizontal-separator {
+    color: transparent!important;
+}
+
+.main-menu-category-footer {
+    padding-left: 6rem;
+    height: 2.5rem;
+    border-top: 1px solid #e9e9e9;
+    display: flex;
+    width: 80%;
+    align-items: center;
+}
+
+.main-menu-category-footer a {
+    font-weight: bold!important;
+}
+
+.main-menu-category-footer-item {
+    font-size: 0.80rem;
+    margin-left: 1.5rem!important;
+    flex:1;
+}
+
+.featured-footer {
+    flex-basis: 10%;
+}
+
+.main-menu-subcategory-image {
+    margin-top: 0.39rem;
+    display: block;
+    
+}
+
+.main-menu-subcategory-image {
+    width: 100%;
+    max-width: 14rem;
+}
+
+.featured-subcategory .main-menu-subcategory-image {
+    width: 50%;
+}

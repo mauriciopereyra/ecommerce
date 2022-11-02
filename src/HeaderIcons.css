@@ -34,10 +34,11 @@
 
 .header-search input {
     height: 1.7rem;
-    width: 10rem;
+    width: 8rem;
     background: #eceff1;
     border: 1px transparent solid;
     padding-left: 0.6rem;
+    padding-right: 2rem;
     transition: border 0.5s;
 }
 

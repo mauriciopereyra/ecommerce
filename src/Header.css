@@ -7,6 +7,10 @@
     color: inherit;
 }
 
+.header-container {
+    position: relative;
+}
+
 .top-row {
     display: flex;
     justify-content: flex-end;
@@ -27,27 +31,6 @@
     /* align-items: center; */
     justify-content: space-between;
     margin-top: 0.6rem;
-}
-
-.main-menu {
-    display: flex;
-}
-
-.main-menu-item {
-    margin-right: 1.5rem;
-    padding: 0.5rem 0;
-    letter-spacing: 1px;
-    font-size: 0.95rem;
-    font-weight: 300;
-    border-bottom: solid transparent 0.2rem
-}
-
-.main-menu-item:hover {
-    border-bottom: solid black 0.2rem
-}
-
-.main-menu-item.bold {
-    font-weight: 500;
 }
 
 .logo {
