@@ -1,4 +1,5 @@
 import './Header.css'
+import HeaderIcons from './HeaderIcons'
 
 const Header = (props) => {
     const renderTopRow = (items) => {
@@ -22,11 +23,12 @@ const Header = (props) => {
                 </ul>
             </div>
             <div className='bottom-row'>
-                    <a href='#' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
-                    </a>
+                <a href='#' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
+                </a>
                 <div className='main-menu'>
                     {renderMainMenu(props.mainMenu)}
                 </div>
+                <HeaderIcons />              
             </div>
         </header>
     )

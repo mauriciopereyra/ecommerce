@@ -1,0 +1,50 @@
+.right-side-menu {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+}
+.header-icon {
+    z-index: 1;
+}
+
+.header-icon svg {
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
+.account-icon svg {
+    height: 1.4rem;
+    width: 1.4rem;
+}
+
+.search-icon svg {
+    height: 1.1rem;
+    width: 1.1rem;
+}
+
+.header-search-container {
+    position: relative;
+}
+
+.header-search {
+    position: absolute;
+    right:-3.5rem;
+    top: -1.2rem;
+}
+
+.header-search input {
+    height: 1.7rem;
+    width: 10rem;
+    background: #eceff1;
+    border: 1px transparent solid;
+    padding-left: 0.6rem;
+    transition: border 0.5s;
+}
+
+.header-search input::placeholder {
+    color: black;
+}
+
+.header-search input:active, .header-search input:hover {
+    border: #767677 1px solid;
+}

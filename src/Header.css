@@ -24,8 +24,9 @@
 .bottom-row {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
+    margin-top: 0.6rem;
 }
 
 .main-menu {
@@ -34,7 +35,7 @@
 
 .main-menu-item {
     margin-right: 1.5rem;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     letter-spacing: 1px;
     font-size: 0.95rem;
     font-weight: 300;
