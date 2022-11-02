@@ -14,20 +14,20 @@ const Row = (props) => {
 
     const renderListings = (items,tab=0) => {
         const style = {'transform':`translateX(calc(${-currentPage*4}00% + ${-currentPage*4}em))`}
-        return items.map((item) => {
+        return items.map((item,index) => {
             switch (item.type) {
                 case 'category':
-                    return <CategoryCard visible={activeTab == tab} currentPage={currentPage} title={item.title} style={style} /> 
+                    return <CategoryCard key={index} visible={activeTab == tab} currentPage={currentPage} title={item.title} style={style} /> 
                 default:
                     return props.type == "teaser" ? 
-                           <TeaserCard currentPage={currentPage} title={item.title} description={item.description}  media={item.media} style={style} /> : 
-                           <ProductListing visible={activeTab == tab} currentPage={currentPage} title={item.title}  type={props.type} collection={item.collection} price={item.price} image={item.image} style={style} />
+                           <TeaserCard key={index} currentPage={currentPage} title={item.title} description={item.description}  media={item.media} style={style} /> : 
+                           <ProductListing key={index} visible={activeTab == tab} currentPage={currentPage} title={item.title}  type={props.type} collection={item.collection} price={item.price} image={item.image} style={style} />
             }
         })
     }
     const renderTitles = (titles) => {
         return titles.map((title,index) => 
-            <h1 onClick={() => 
+            <h1 key={index} onClick={() => 
                 {setActiveTab(index)
                 setPage(0)}
             } 

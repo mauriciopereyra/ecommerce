@@ -2,8 +2,8 @@ import './BottomFooter.css'
 
 const BottomFooter = (props) => {
     const renderItems = (items) => {
-        return items.map(item => {
-            return <li><a href="#">{item}</a></li>
+        return items.map((item,index) => {
+            return <li key={index}><a href="#">{item}</a></li>
         })
     }
     return (

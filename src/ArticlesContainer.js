@@ -2,9 +2,9 @@ import './ArticlesContainer.css'
 
 const ArticlesContainer = (props) => {
     const renderArticles = (articles) => {
-        return articles.map(article => {
+        return articles.map((article,index) => {
             return (
-                <article>
+                <article key={index}>
                     <h1 className='article-title'>{article.title}</h1>
                     <p className='article-content'>{article.content}</p>
                 </article>

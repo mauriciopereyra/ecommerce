@@ -1,6 +1,5 @@
+import { heart } from './data/icons'
 import './ProductListing.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 
 const ProductListing = (props) => {
@@ -11,7 +10,7 @@ const ProductListing = (props) => {
         >
             <div className="product-listing-image">
                 <img src={props.image}></img>
-                {props.type == 'product' ? <FontAwesomeIcon className="product-listing-heart" icon={faHeart} /> : ""}
+                {props.type == 'product' ? <div className="product-listing-heart">{heart}</div> : ""}
                 {props.price ? <div className='product-listing-price'>{props.price}</div> : ""}
             </div>
             <div className="product-listing-text">

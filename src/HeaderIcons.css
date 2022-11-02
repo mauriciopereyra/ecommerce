@@ -45,6 +45,15 @@
     color: black;
 }
 
-.header-search input:active, .header-search input:hover {
+.header-search input:focus::placeholder {
+    color: transparent;
+}
+
+
+.header-search input:focus-visible {
+    outline:0px;
+}
+
+.header-search input:active, .header-search input:hover, .header-search input:focus {
     border: #767677 1px solid;
 }

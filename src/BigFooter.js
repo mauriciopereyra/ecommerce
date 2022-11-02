@@ -2,9 +2,9 @@ import './BigFooter.css'
 
 const BigFooter = (props) => {
     const renderLists = (lists) => {
-        return (lists.map(list => {
+        return (lists.map((list,index) => {
             return (
-                <ul className='footer-group'>
+                <ul key={index} className='footer-group'>
                     <li className='footer-headline'><h5>{list.title}</h5></li>
                     {renderItems(list.items)}
                 </ul>
@@ -13,9 +13,9 @@ const BigFooter = (props) => {
     }
 
     const renderItems = (items) => {
-        return items.map(item => {
+        return items.map((item,index) => {
             return (
-            !item.includes('https') ? <li className='footer-item'><a href='#'>{item}</a></li> : <li className='footer-item'><a href='#'><img src={item}></img></a></li>
+            !item.includes('https') ? <li key={index} className='footer-item'><a href='#'>{item}</a></li> : <li key={index} className='footer-item'><a href='#'><img src={item}></img></a></li>
             )
         })
     }
