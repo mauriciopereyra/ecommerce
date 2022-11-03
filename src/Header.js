@@ -2,6 +2,8 @@ import toggleHeader from './functions/toggleHeader'
 import './Header.css'
 import HeaderIcons from './HeaderIcons'
 import MainMenu from './MainMenu'
+import BlackRow from './BlackRow'
+import { headerPromo } from './data/promos'
 
 const Header = (props) => {
 
@@ -16,6 +18,7 @@ const Header = (props) => {
     return (
         <>
         <header className='header-fixed' id="header-fixed">
+            <BlackRow promo={headerPromo} transition={true} style="header-black-row" />
             <div className='header-container'>
                 <div className='header indented wrapped'>
                     <div className='top-row'>

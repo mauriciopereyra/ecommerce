@@ -6,6 +6,16 @@
     position: relative;
 }
 
+.header-black-row {
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+.body-black-row {
+    font-size: 1rem;
+}
+
 .black-row-close {
     position: absolute;
     right: 2.2rem;
@@ -14,4 +24,9 @@
     bottom: 0;
     height: fit-content;
     cursor: pointer;
+}
+
+.black-row-promo {
+    opacity: 1;
+    transition: opacity 0.2s;
 }

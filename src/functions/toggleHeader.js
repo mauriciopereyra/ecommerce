@@ -5,9 +5,9 @@ const toggleHeader = (window)=> {
     window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-        document.getElementById("header-fixed").style.top = "0";
-    } else if (currentScrollPos > 16*5) {
-        document.getElementById("header-fixed").style.top = "-6rem";
+        document.getElementById("header-fixed").classList.remove("header-fixed-hidden");
+    } else if (currentScrollPos > 16*7) {
+        document.getElementById("header-fixed").classList.add("header-fixed-hidden");
     }
     prevScrollpos = currentScrollPos;
     }
