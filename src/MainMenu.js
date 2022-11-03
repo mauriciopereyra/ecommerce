@@ -15,8 +15,10 @@ const MainMenu = (props) => {
                                 {renderSubcategories(item.subcategories,item.bottomItems)}
                             </div>
                             {item.bottomItems ?
-                            <div className="main-menu-category-footer">
+                            <div className="main-menu-category-footer-container">
+                                <div className="main-menu-category-footer">
                                 {renderFooter(item.subcategories)}
+                            </div>
                             </div> :
                             ""                            
                             }
