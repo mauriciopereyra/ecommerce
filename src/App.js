@@ -15,12 +15,15 @@ import { bigFooter, bottomFooter } from './data/footer'
 import BottomFooter from './BottomFooter';
 import Header from './Header';
 import { mainMenu, topRow, logo } from './data/header';
+import BlackRow from './BlackRow';
+import { homePromo } from './data/promos';
 
 function App() {
 
   return (
     <>
     <Header topRow={topRow} mainMenu={mainMenu} logo={logo} />
+    <BlackRow promo={homePromo} closable={true} />
     <Banner button={"SHOP NOW"} textColor={'white'} height={"23vw"} background={banner_adiclub.background} description={banner_adiclub.description}/>
     <Banner button={"SHOP NOW"} title={banner_thebe.title} description={banner_thebe.description} textColor={'white'} height={"43vw"} background={banner_thebe.background}/>
     <Row type='product' title="Still interested?" style={'big'} items={productsList.concat(productsList)} />

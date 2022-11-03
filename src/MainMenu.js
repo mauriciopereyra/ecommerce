@@ -32,9 +32,9 @@ const MainMenu = (props) => {
     }
 
     const renderFooter = (subcategories) => {
-        return subcategories.map(subcategory => {
+        return subcategories.map((subcategory,index) => {
             return (
-                <div className={`main-menu-category-footer-item ${subcategory.featured ? "featured-footer" : ""}`}>
+                <div key={index} className={`main-menu-category-footer-item ${subcategory.featured ? "featured-footer" : ""}`}>
                     <a href="#">{subcategory.items.at(-1)}</a>
                 </div>
             )
@@ -78,7 +78,7 @@ const MainMenu = (props) => {
 
             </li> 
             : 
-            <li className="main-menu-subcategory-item horizontal-separator">Separator</li>
+            <li key={index} className="main-menu-subcategory-item horizontal-separator">Separator</li>
             )})
     }
 

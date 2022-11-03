@@ -1,0 +1,17 @@
+.black-row {
+    background: black;
+    color:white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.black-row-close {
+    position: absolute;
+    right: 2.2rem;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    height: fit-content;
+    cursor: pointer;
+}

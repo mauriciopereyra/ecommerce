@@ -287,6 +287,7 @@ export const mainMenu = [
                 'Golf',
                 'Cycling',
                 'Yoga',
+                '',
             ]},
         ]
 }, 
@@ -336,6 +337,7 @@ export const mainMenu = [
         style: 'bold',
         subcategories: [
             {title: 'BRANDS',
+            featured: true,
             items: [
                 "Originals",
                 "Running",
