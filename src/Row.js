@@ -4,16 +4,26 @@ import SliderButtons from './SliderButtons'
 import { useEffect, useRef, useState } from 'react'
 import CategoryCard from "./CategoryCard"
 import TeaserCard from "./TeaserCard"
+import { styleInfo } from "./functions/productsSlider"
 
 const Row = (props) => {
    
     const [ currentPage, setPage ] = useState(0)
     const [ activeTab, setActiveTab ] = useState(0)
-    const prevPage = () => setPage(currentPage - 1)
-    const nextPage = () => setPage(currentPage + 1)
+    const prevPage = () => changePage(currentPage-1)
+    const nextPage = () => changePage(currentPage+1)
+    const container = useRef()
+    const [offset, setOffset] = useState(0)
+
+    const changePage = (newPage) => {
+        const [page, offset] = styleInfo(props,window,activeTab,container,currentPage,newPage)
+        setPage(page)
+        setOffset(offset)
+    }
 
     const renderListings = (items,tab=0) => {
-        const style = {'transform':`translateX(calc(${-currentPage*4}00% + ${-currentPage*4}em))`}
+        const style = {'transform':`translateX(${-offset}px)`}
+        
         return items.map((item,index) => {
             switch (item.type) {
                 case 'category':
@@ -29,7 +39,9 @@ const Row = (props) => {
         return titles.map((title,index) => 
             <h1 key={index} onClick={() => 
                 {setActiveTab(index)
-                setPage(0)}
+                setPage(0)
+                setOffset(0)
+            }
             } 
             className={`tab-title ${index==activeTab ? "active" : ""}`}>{title}</h1>)
     }
@@ -44,8 +56,6 @@ const Row = (props) => {
 
       return (
         <div className={"row " + props.style}>
-            {/* <h1>Page {currentPage}</h1> */}
-            {/* <h2>Items: {Array.isArray(props.title) ? props.items[activeTab].length : props.items.length}</h2> */}
             <div className="row-title">
                 {Array.isArray(props.title) ?
                  <div className="tab-list">
@@ -54,7 +64,7 @@ const Row = (props) => {
                  <h1>{props.title}</h1>}
                 <SliderButtons prevPage={prevPage} nextPage={nextPage} />
             </div>  
-            <div className="row-items">
+            <div ref={container} className="row-items">
                 {renderRows(props.items)}
             </div>
         </div>

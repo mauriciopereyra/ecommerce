@@ -4,9 +4,10 @@ import './ProductListing.css'
 
 const ProductListing = (props) => {
     return (
-        <div className={`product-listing 
-            ${props.type=='category' ? 'category' : ''}`} 
-            style={{...props.style,'display':`${props.visible ? 'initial' : 'none'}`}}
+        <div className={`${props.visible ? 'product-listing' : 'product-listing-hidden'}
+            ${props.type=='category' ? 'category' : ''}
+            `} 
+            style={{...props.style}}
         >
             <div className="product-listing-image">
                 <img src={props.image}></img>

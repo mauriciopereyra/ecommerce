@@ -28,7 +28,7 @@ function App() {
     <Banner button={"SHOP NOW"} title={banner_thebe.title} description={banner_thebe.description} textColor={'white'} height={"43vw"} background={banner_thebe.background}/>
     <Row type='product' title="Still interested?" style={'big'} items={productsList.concat(productsList)} />
     <Row type='category' title={["WOMEN","MEN","KIDS"]} style={'indented'} items={[categoryCards,categoryCards,categoryCards]} />
-    <Row type='product' title={["New Arrivals","What's trending","Release dates"]} style={'indented'} items={[productsList,productsList,productsList]} />
+    <Row type='product' title={["New Arrivals","What's trending","Release dates"]} style={'indented'} items={[productsList.concat(productsList,productsList,productsList),productsList,productsList]} />
     <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />
     <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={productsList.concat(productsList)} />
     <Row type='teaser' title="TRENDING" style={'indented wrapped'} items={trendingCards} />
