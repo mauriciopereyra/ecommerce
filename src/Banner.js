@@ -6,14 +6,20 @@ const Banner = (props) => {
         <div 
         className='banner' 
         style={{height:props.height,
-        backgroundImage:`url(${props.background})`,
+        backgroundImage:`url(${props.banner.background})`,
         color: props.textColor}}>
             <div className='banner-description'>
-                {props.title ? <h1>{props.title}</h1> : ""}
-                {props.description ? <p>{props.description}</p> : ""}
-                {props.button ? <Button text={props.button} type={'button1'} /> : ""}
-                
+                {props.banner.title ? <h1>{props.banner.title}</h1> : ""}
+                {props.banner.description ? <p>{props.banner.description}</p> : ""}
+                {props.banner.cta ? <Button text={props.banner.cta} 
+                type={props.button == 'black' ? 'button1 black' : 'button1'} /> : ""}
             </div>
+            {props.banner.video ?
+            <div className='banner-video'>
+                <video src={props.banner.video} preload="auto" muted autoPlay={true} loop={true} playsInLine="" webkit-playsinline="" x5-playsinline=""></video>
+            </div>
+            :
+            ''}
         </div>
     )
 }

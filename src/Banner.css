@@ -4,14 +4,30 @@
     background-position: right;   
     display:flex;
     align-items: center;
+    position: relative;
 }
 
 .banner-description {
     width: 30%;
     margin-left: 3rem;
     line-height: 1.5;
+    z-index: 1;
 }
 
 .banner-description h1 {
     line-height: 1;
+}
+
+.banner-video {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
