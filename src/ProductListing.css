@@ -1,6 +1,6 @@
 .product-listing {
     display: inline-block;
-    margin-right: 16px;
+    margin-right: 1rem;
     cursor: pointer;
     border: 1px solid white;
     transition: 0.5s ease-in-out transform;
@@ -18,6 +18,7 @@
     height:250px;
     width:250px;
     position:relative;
+    margin: 0 auto;
 }
 
 .product-listing-image img {
@@ -85,4 +86,27 @@
 .category .product-listing-title {
  text-align:center;   
  font-weight: bold;
+}
+
+@media screen and (max-width:1000px){
+    .product-listing {
+        margin-right: 0.4rem;
+    }
+
+    .product-listing-image {
+        height:150px;
+        width:150px;
+    }
+
+    /* Big style */
+    .big .product-listing-image {
+        height:230px;
+        width:230px;
+    }
+
+    .category .product-listing-image {
+            height:150px;
+            width:150px;
+       }
+
 }

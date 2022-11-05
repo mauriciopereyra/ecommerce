@@ -61,7 +61,7 @@ const Row = (props) => {
                  <div className="tab-list">
                  {renderTitles(props.title)}
                  </div> :
-                 <h1>{props.title}</h1>}
+                 <h1 className="indented wrapped">{props.title}</h1>}
                 <SliderButtons prevPage={prevPage} nextPage={nextPage} />
             </div>  
             <div ref={container} className="row-items">

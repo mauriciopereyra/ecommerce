@@ -1,5 +1,6 @@
 .category-card {
-    height:336px;
+    /* height:336px; */
+    width: 252px;
     border: solid white 1px;
     display: flex;
     flex-direction: column;
@@ -11,4 +12,14 @@
 .category-card-title {
     margin-top: 1.5em;
     width: 250px;
+}
+
+@media screen and (max-width:1000px){
+    .category-card-title {
+        margin-top: 1.5em;
+        width: 162px;
+    }
+    .category-card {
+        margin-right: 0.4rem;
+    }
 }

@@ -3,8 +3,6 @@ import Button from './Button'
 
 const Banner = (props) => {
 
-    const width = window.innerWidth;
-
     return (
         <div className={`banner-container`} 
         style={{color: props.textColor}}
