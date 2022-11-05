@@ -22,6 +22,15 @@
     width: 1.1rem;
 }
 
+.menu-icon {
+    display: none;
+}
+
+.menu-icon svg {
+    height: 1.6rem;
+    width: 1.6rem;
+}
+
 .header-search-container {
     position: relative;
 }
@@ -57,4 +66,16 @@
 
 .header-search input:active, .header-search input:hover, .header-search input:focus {
     border: #767677 1px solid;
+}
+
+@media screen and (max-width:1000px) {
+    .menu-icon {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+    .right-side-menu {
+        flex: 1;
+        justify-content: end;
+    }
 }

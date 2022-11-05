@@ -4,6 +4,7 @@ import HeaderIcons from './HeaderIcons'
 import MainMenu from './MainMenu'
 import BlackRow from './BlackRow'
 import { headerPromo } from './data/promos'
+import { menu } from './data/icons'
 
 const Header = (props) => {
 
@@ -27,6 +28,7 @@ const Header = (props) => {
                         </ul>
                     </div>
                     <div className='bottom-row'>
+                        <div className='header-icon menu-icon'><a href='#'>{menu}</a></div>
                         <a href='#' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
                         </a>
                         <MainMenu mainMenu={props.mainMenu} />

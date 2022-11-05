@@ -1,0 +1,17 @@
+.indented {
+    margin-left: 3rem;
+}
+
+.wrapped {
+    margin-right: 3rem;
+}
+
+@media screen and (max-width:1000px) {
+    .indented {
+        margin-left: 1rem;
+    }
+    
+    .wrapped {
+        margin-right: 1rem;
+    }
+}

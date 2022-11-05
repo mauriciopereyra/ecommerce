@@ -61,3 +61,10 @@
     height: 7.5rem;
     content: " ";
 }
+
+@media screen and (max-width:1000px){
+    .logo {
+        background-size: initial;
+        margin-top: 0.3rem!important;
+    }
+}

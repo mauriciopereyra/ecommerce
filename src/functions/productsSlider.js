@@ -1,8 +1,7 @@
 export const styleInfo = (props,window,activeTab,container,currentPage,requestedPage=currentPage) => {
     const items = Array.isArray(props.title) ? props.items[activeTab].length : props.items.length
-    
     const containerWidth = container.current.offsetWidth
-    const item = container.current.getElementsByClassName('product-listing')[0]
+    const item = props.type == 'teaser' ? container.current.getElementsByClassName('teaser-card')[0] : container.current.getElementsByClassName('product-listing')[0]
     const itemWidth = parseInt(item.offsetWidth)+parseInt(window.getComputedStyle(item).marginRight)
     // Exact items per page
     const itemsPerPage = containerWidth / itemWidth

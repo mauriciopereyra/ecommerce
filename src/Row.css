@@ -20,14 +20,6 @@
     display:flex;
 }
 
-.indented {
-    margin-left: 3rem;
-}
-
-.wrapped {
-    margin-right: 3rem;
-}
-
 .indented h1 {
     margin-left: 0;
 }
