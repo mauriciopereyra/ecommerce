@@ -77,5 +77,6 @@
     .right-side-menu {
         flex: 1;
         justify-content: end;
+        gap:1rem;
     }
 }

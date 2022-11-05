@@ -4,7 +4,7 @@ import './CallToAction.css'
 const CallToAction = (props) => {
     return (
         <div className='cta-container'>
-            <div className='cta-wrapper'>
+            <div className='cta-wrapper indented wrapped'>
                 <h2 className='cta-text'>
                     {props.text}
                 </h2>

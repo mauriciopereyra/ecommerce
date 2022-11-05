@@ -1,15 +1,17 @@
 .cta-container {
     background: #ede734;
+    display: flex;
+    justify-content: center;
 }
 
 .cta-wrapper {
-    margin: 0 auto;
-    width: 66%;
     display: grid;
     align-items: baseline;
     grid-template-columns: 50% 50%;
     column-gap: 2%;
+    row-gap: 1rem;
     padding: 2.2rem 0;
+    width: 66%;
 }
 
 .cta-text {
@@ -19,4 +21,12 @@
 }
 
 .cta-button-wrapper {
+}
+
+@media screen and (max-width:1000px){
+    .cta-wrapper {
+        grid-template-columns: repeat(auto-fill, 100%);
+        padding: 1rem 0;
+        width: 100%;
+    }
 }

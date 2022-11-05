@@ -8,10 +8,10 @@
 
 @media screen and (max-width:1000px) {
     .indented {
-        margin-left: 1rem;
+        margin-left: 1.5rem;
     }
     
     .wrapped {
-        margin-right: 1rem;
+        margin-right: 1.5rem;
     }
 }

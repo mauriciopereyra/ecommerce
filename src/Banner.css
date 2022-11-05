@@ -1,15 +1,24 @@
+.banner-container {
+    position: relative;
+}
+
 .banner {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;   
     display:flex;
     align-items: center;
-    position: relative;
+    bottom: 0;
+    height: 26rem;
+}
+
+.banner-small {
+    height: 18rem;
+}
+
+.banner-with-video {
+    height: 30rem;
 }
 
 .banner-description {
     width: 30%;
-    margin-left: 3rem;
     line-height: 1.5;
     z-index: 1;
 }
@@ -18,16 +27,68 @@
     line-height: 1;
 }
 
-.banner-video {
-    position: absolute;
+.banner-media {
+    position:absolute;
     top:0;
-    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-video, .banner-image, .banner-video video, .banner-image img {
     width: 100%;
     height: 100%;
 }
 
 .banner-video video {
-    width: 100%;
-    height: 100%;
+    object-fit: fill;
+}
+
+.banner-image img {
     object-fit: cover;
 }
+
+.sm-screen {
+    display: none;
+}
+
+@media screen and (max-width:1000px){
+    .banner {
+        align-items: flex-start;
+        justify-content: end;
+        height: 22rem;
+        flex-direction: column;
+    }
+
+    .banner-small {
+        height: 18rem;
+    }
+
+    .banner-with-video {
+        height: 34rem;
+    }
+
+    .banner-description {
+        margin-bottom: 2rem;
+        width: 50%;
+    }
+    
+    .banner-image img {
+        object-fit: fill;
+    }
+
+    .sm-screen {
+        display: initial;
+    }
+
+    .lg-screen {
+        display: none;
+    }
+}
+
+@media screen and (max-width:700px){
+
+    .banner-description {
+        width: 100%;
+    }
+}
+

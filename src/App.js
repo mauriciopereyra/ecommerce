@@ -2,7 +2,7 @@ import './App.css';
 import Row from './Row'
 import productsList from './data/productsList';
 import Banner from './Banner';
-import { banner_adiclub, banner_members, banner_thebe } from './data/banners'
+import { banner_11, banner_adiclub, banner_members, banner_thebe } from './data/banners'
 import categoryCards from './data/categoryCards';
 import { whatsHotCards, trendingCards } from './data/teaserCards';
 import LinksGroup from './LinksGroup';
@@ -24,9 +24,9 @@ function App() {
     <>
     <Header topRow={topRow} mainMenu={mainMenu} logo={logo} />
     <BlackRow promo={homePromo} closable={true} style="body-black-row" />
-    <Banner banner={banner_adiclub} textColor={'white'} height={"23vw"} />
-    <Banner banner={banner_thebe} textColor={'white'} height={"43vw"} />
-    <Banner button='black' banner={banner_members} height={"43vw"} />
+    <Banner banner={banner_adiclub} textColor={'white'} style='banner-small' />
+    <Banner banner={banner_11} textColor={'white'} />
+    <Banner button='black' banner={banner_members} style='banner-with-video' />
     <Row type='product' title="Still interested?" style={'big'} items={productsList.concat(productsList)} />
     <Row type='category' title={["WOMEN","MEN","KIDS"]} style={'indented'} items={[categoryCards,categoryCards,categoryCards]} />
     <Row type='product' title={["New Arrivals","What's trending","Release dates"]} style={'indented'} items={[productsList.concat(productsList,productsList,productsList),productsList,productsList]} />

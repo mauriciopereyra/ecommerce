@@ -6,6 +6,7 @@
     letter-spacing: 2px;
     gap: 1rem;
     display: flex;
+    max-width: 100%;
 }
 
 .button1, .button2, .button1::before {
@@ -16,7 +17,7 @@
     border:0;
     position:relative;
     white-space: nowrap;
-    overflow: visible;
+    /* overflow: visible; */
     top:0;
     left:0;
 }
@@ -61,4 +62,8 @@
 
 .black::before {
     border-color: black;
+}
+
+.right-arrow {
+    flex-basis: 10%;
 }
