@@ -26,3 +26,14 @@
     text-decoration: none;
     color:inherit;
 }
+
+@media screen and (max-width:1000px){
+    .bottom-footer ul {
+        flex-wrap: wrap;
+    }
+    .bottom-footer li {
+        flex-basis: 33%;
+        border-right: none;
+        text-align: center;
+    }
+}
