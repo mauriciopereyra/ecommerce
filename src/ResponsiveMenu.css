@@ -1,0 +1,69 @@
+.close-menu {
+    position: absolute;
+    right: 2rem;
+    top: 1.3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    cursor:pointer;
+}
+
+.r-menu-wrapper {
+    display:flex;
+    height: 100vh;
+    width:100vw;
+    position:fixed;
+    z-index: 3;
+    background: white;
+    flex-direction: column;
+    left:-100vw;
+    transition: 0.5s all;
+}
+
+.r-menu-wrapper a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.r-menu-top {
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:3rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.8);;
+}
+
+.r-menu-logo {
+    width: 3rem;
+    height: 3rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+.r-menu-wrapper ul, .r-menu-wrapper li {
+    margin: 0;
+    list-style: none;
+}
+
+.r-menu-content {
+    padding:1rem 2rem;
+    display:flex;
+    flex-direction: column;
+    letter-spacing:0.15rem;
+    font-size: 1.2rem;
+    overflow:scroll;
+}
+
+.r-menu-item {
+    flex-basis: 2.8rem;
+    flex-shrink: 0;
+    display:flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.r-menu-item.arrow {
+}

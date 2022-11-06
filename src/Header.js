@@ -5,8 +5,11 @@ import MainMenu from './MainMenu'
 import BlackRow from './BlackRow'
 import { headerPromo } from './data/promos'
 import { menu } from './data/icons'
+import ResponsiveMenu from './ResponsiveMenu'
+import React, { useState } from 'react';
 
 const Header = (props) => {
+    const [ isMenuOpen, setMenuOpen ] = useState(false)
 
     toggleHeader(window)
 
@@ -18,6 +21,7 @@ const Header = (props) => {
 
     return (
         <>
+        <ResponsiveMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <header className='header-fixed' id="header-fixed">
             <BlackRow promo={headerPromo} transition={true} style="header-black-row" />
             <div className='header-container'>
@@ -28,7 +32,7 @@ const Header = (props) => {
                         </ul>
                     </div>
                     <div className='bottom-row'>
-                        <div className='header-icon menu-icon'><a href='#'>{menu}</a></div>
+                        <div onClick={() => setMenuOpen(true)} className='header-icon menu-icon'>{menu}</div>
                         <a href='#' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
                         </a>
                         <MainMenu mainMenu={props.mainMenu} />
@@ -41,5 +45,4 @@ const Header = (props) => {
         </>
     )
 }
-
 export default Header

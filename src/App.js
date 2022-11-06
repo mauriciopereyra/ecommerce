@@ -17,6 +17,7 @@ import Header from './Header';
 import { mainMenu, topRow, logo } from './data/header';
 import BlackRow from './BlackRow';
 import { homePromo } from './data/promos';
+import ResponsiveMenu from './ResponsiveMenu';
 
 function App() {
 

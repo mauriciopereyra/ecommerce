@@ -67,4 +67,7 @@
         background-size: initial;
         margin-top: 0.3rem!important;
     }
+    .header-back {
+        /* height: 5.5rem; */
+    }
 }
