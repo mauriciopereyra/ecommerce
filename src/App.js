@@ -17,8 +17,7 @@ import Header from './Header';
 import { mainMenu, topRow, logo } from './data/header';
 import BlackRow from './BlackRow';
 import { homePromo } from './data/promos';
-import ResponsiveMenu from './ResponsiveMenu';
-import {Route, Routes} from 'react-router-dom'
+import {Route, Routes, useParams} from 'react-router-dom'
 import ProductDetail from './ProductDetail';
 
 function App() {
@@ -43,7 +42,7 @@ function App() {
           <ArticlesContainer items={[article1,article2]} />
         </>
       }></Route>
-      <Route path="/product" element={
+      <Route path="/product/:productId" element={
         <>
           <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={false}/>
           <ProductDetail />

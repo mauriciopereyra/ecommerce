@@ -1,18 +1,12 @@
 import Button from './Button'
 import { useEffect, useState } from 'react'
 
-const sizes = [
-    '8.5 UK',
-    '9 UK',
-    '10 UK',
-    '10.5 UK',
-    '11 UK',
-    '11.5 UK',
-    '12 UK',
-]
 
-const ProductDetailSide = () => {
+
+const ProductDetailSide = (props) => {
     
+    const product = props.product
+
     const [ sizeSelected, setSize ] = useState(false)
 
     const renderSizes = (sizes) => {
@@ -27,18 +21,18 @@ const ProductDetailSide = () => {
     return (
         <div className="product-side">
         <div className='ps-top-row'>
-            <div className='ps-tags'>Men • Originals</div>
-            <div className='ps-rating'>★★★★☆ 112</div>
+            <div className='ps-tags'>{product.collection}</div>
+            <div className='ps-rating'>{product.rating}</div>
         </div>
-        <h1 className='ps-title'>SAMBA ARGENTINA SHOES</h1>
-        <div className='ps-price'>฿2,880</div>
-        <div className='ps-colors'>Clear Blue / Cloud White / Tactile Blue</div>
+        <h1 className='ps-title'>{product.title}</h1>
+        <div className='ps-price'>{product.price}</div>
+        <div className='ps-colors'>{product.colors}</div>
         <div className='ps-sizes-container'>
             <h3 className='ps-sizes-title'>
                 Sizes
             </h3>
             <div className='ps-sizes-items'>
-                {renderSizes(sizes)}
+                {renderSizes(product.sizes)}
             </div>
             <div className='ps-sizes-guide'>
                 <span>Size guide</span>
@@ -46,7 +40,7 @@ const ProductDetailSide = () => {
         </div>
         <div className='ps-buttons-group'>
                 <Button type="button1 black" text="ADD TO BAG" />
-                <Button type="button2 heart" />
+                <Button type="button2 heart no-right-arrow" />
             </div>
         <ul className='ps-notes'>
             <li>11.11 deals: Buy more save more</li>
