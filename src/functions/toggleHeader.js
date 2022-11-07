@@ -4,10 +4,12 @@ const toggleHeader = (window)=> {
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("header-fixed").classList.remove("header-fixed-hidden");
-    } else if (currentScrollPos > 16*7) {
-        document.getElementById("header-fixed").classList.add("header-fixed-hidden");
+    if (document.getElementById("header-fixed")){
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("header-fixed").classList.remove("header-fixed-hidden");
+        } else if (currentScrollPos > 16*7) {
+            document.getElementById("header-fixed").classList.add("header-fixed-hidden");
+        }
     }
     prevScrollpos = currentScrollPos;
     }

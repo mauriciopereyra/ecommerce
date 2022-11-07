@@ -22,7 +22,9 @@ const Header = (props) => {
     return (
         <>
         <ResponsiveMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
-        <header className='header-fixed' id="header-fixed">
+        <header className={`header${props.fixed ? '-fixed' : ''}`} 
+        id={`header${props.fixed ? '-fixed' : ''}`}
+        >
             <BlackRow promo={headerPromo} transition={true} style="header-black-row" />
             <div className='header-container'>
                 <div className='header indented wrapped'>
@@ -41,7 +43,7 @@ const Header = (props) => {
                 </div>
             </div>
         </header>
-        <div className='header-back'></div>
+        { props.fixed ? <div className='header-back'></div> : ""}
         </>
     )
 }

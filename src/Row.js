@@ -37,10 +37,11 @@ const Row = (props) => {
     }
     const renderTitles = (titles) => {
         return titles.map((title,index) => 
-            <h1 key={index} onClick={() => 
+            <h1 key={index} onClick={(event) => 
                 {setActiveTab(index)
                 setPage(0)
                 setOffset(0)
+                container.current.scrollLeft = 0 
             }
             } 
             className={`tab-title ${index==activeTab ? "active" : ""}`}>{title}</h1>)

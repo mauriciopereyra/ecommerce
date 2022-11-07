@@ -1,0 +1,101 @@
+.product-detail {
+    display:flex;
+}
+
+.product-main {
+    width: 65%;
+}
+
+.product-side {
+    padding:2rem;
+    width:35%;
+    height:fit-content;
+    position: sticky;
+    top:0;
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    gap: 1.2rem;
+}
+
+.ps-top-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ps-title {
+    font-weight: normal;
+    margin:0;
+}
+
+.ps-title {
+    font-weight: normal;
+    margin:0;
+}
+
+.ps-sizes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin: 1rem 0;
+}
+
+.ps-size {
+    padding:0.7rem;
+    display: inline-block;
+    border: solid rgb(223, 223, 223) 1px;
+    width: 2.8rem;
+    font-size: 0.8rem;
+    cursor:pointer;
+    text-align: center;
+}
+
+.ps-sizes-title {
+    margin:0;
+}
+
+.ps-size:hover, .ps-sizes-guide:hover span, .ps-notes li:hover {
+    background: black;
+    color:white;
+}
+
+
+.ps-size.selected {
+    background: black;
+    color:white;
+}
+
+.ps-sizes-guide {
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.ps-buttons-group {
+    display:flex;
+    gap:1rem;
+    margin: 0 0 1rem;
+}
+
+.ps-buttons-group button:nth-child(1) {
+    flex-grow: 1;
+}
+
+.ps-buttons-group button:nth-child(2) {
+    flex-basis: 10%;
+}
+
+.ps-notes {
+    margin:0;
+    display:flex;
+    gap:1rem;
+    flex-direction: column;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.ps-notes li {
+    line-height: 1.5;
+    cursor: pointer;
+}
