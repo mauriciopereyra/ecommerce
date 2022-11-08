@@ -4,21 +4,23 @@ import './ProductListing.css'
 
 
 const ProductListing = (props) => {
+    const product = props.product
+
     return (
-        <Link to="/product">
+        <Link to={`/product/${product.id}`}>
             <div className={`${props.visible ? 'product-listing' : 'product-listing-hidden'}
                 ${props.type=='category' ? 'category' : ''}
                 `} 
                 style={{...props.style}}
             >
                 <div className="product-listing-image">
-                    <img src={props.image}></img>
+                    <img src={product.image}></img>
                     {props.type == 'product' ? <div className="product-listing-heart">{heart}</div> : ""}
-                    {props.price ? <div className='product-listing-price'>{props.price}</div> : ""}
+                    {product.price ? <div className='product-listing-price'>{product.price}</div> : ""}
                 </div>
                 <div className="product-listing-text">
-                    <div className="product-listing-title">{props.title}</div>
-                    <div className="product-listing-collection">{props.collection}</div>
+                    <div className="product-listing-title">{product.title}</div>
+                    <div className="product-listing-collection">{product.collection}</div>
                 </div>
             </div>
         </Link>

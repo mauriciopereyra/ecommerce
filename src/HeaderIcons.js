@@ -4,7 +4,7 @@ import './HeaderIcons.css'
 const HeaderIcons = () => {
     return (
         <div className='right-side-menu'>
-            <div className='header-search-container'>
+            {/* <div className='header-search-container'>
                 <div className='header-search'>
                     <form>
                         <input placeholder='Search' type='text'></input>
@@ -15,7 +15,7 @@ const HeaderIcons = () => {
                 <a href='#'>
                     {search}
                 </a>
-            </div>
+            </div> */}
             <div className='header-icon account-icon'>
                 <a href='#'>
                     {account}

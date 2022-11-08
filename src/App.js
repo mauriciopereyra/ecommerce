@@ -19,6 +19,8 @@ import BlackRow from './BlackRow';
 import { homePromo } from './data/promos';
 import {Route, Routes, useParams} from 'react-router-dom'
 import ProductDetail from './ProductDetail';
+import NotFound from './NotFound';
+import Category from './Category';
 
 function App() {
 
@@ -44,11 +46,22 @@ function App() {
       }></Route>
       <Route path="/product/:productId" element={
         <>
-          <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={false}/>
+          <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />
           <ProductDetail />
         </>
       }></Route>
-
+      <Route path="/category/:categoryId" element={
+        <>
+          <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />
+          <Category />
+        </>
+      }></Route>
+      <Route path='*' element={
+        <>
+          <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />
+          <NotFound />
+        </>
+      }></Route>
     </Routes>
     <CallToAction text={"BECOME A MEMBER & GET 15% OFF"} />
     <BigFooter items={bigFooter} />

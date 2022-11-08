@@ -1,0 +1,16 @@
+.category-section .product-listing {
+    margin-right: 0;
+}
+
+.category-total-items {
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: gray;
+    margin-left: 0.6rem;
+    font-style: normal;
+}
+
+.category-title {
+    font-style: italic;
+    letter-spacing: 1px;
+}

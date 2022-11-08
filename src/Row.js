@@ -31,7 +31,7 @@ const Row = (props) => {
                 default:
                     return props.type == "teaser" ? 
                            <TeaserCard key={index} currentPage={currentPage} title={item.title} description={item.description}  media={item.media} style={style} /> : 
-                           <ProductListing key={index} visible={activeTab == tab} currentPage={currentPage} title={item.title}  type={props.type} collection={item.collection} price={item.price} image={item.image} style={style} />
+                           <ProductListing key={index} visible={activeTab == tab} currentPage={currentPage} type={props.type} style={style} product={item} />
             }
         })
     }

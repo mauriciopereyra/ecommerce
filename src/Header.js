@@ -35,7 +35,7 @@ const Header = (props) => {
                     </div>
                     <div className='bottom-row'>
                         <div onClick={() => setMenuOpen(true)} className='header-icon menu-icon'>{menu}</div>
-                        <a href='#' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
+                        <a href='/' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
                         </a>
                         <MainMenu mainMenu={props.mainMenu} />
                         <HeaderIcons />              

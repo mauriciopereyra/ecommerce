@@ -32,14 +32,20 @@ const ProductDetail = () => {
                     <div className='pd-image'>
                         <img src={product.image}></img>
                     </div>
-                    {renderImages(product.detailImages)}
+                    {product.detailImages ?
+                    renderImages(product.detailImages) :
+                    ""
+                    }
                 </div>
-                <div onClick={() => setExpanded(!isExpanded) } className='pd-image-button-container'>
+                    {product.detailImages ?
+                        <div onClick={() => setExpanded(!isExpanded) } className='pd-image-button-container'>
                         {isExpanded ?
                         <Button type="button2 no-right-arrow up-arrow" text="SHOW LESS"/> :
                         <Button type="button2 no-right-arrow down-arrow" text="SHOW MORE"/>
                         }
-                </div>
+                        </div>
+                    : ""
+                    }
                 <Row type='product' title="YOU MAY ALSO LIKE" items={productsList.concat(productsList)} />
                 <Row type='product' title="OTHERS ALSO BOUGHT" items={productsList.concat(productsList)} />
             </div>

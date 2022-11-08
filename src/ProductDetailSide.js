@@ -27,17 +27,21 @@ const ProductDetailSide = (props) => {
         <h1 className='ps-title'>{product.title}</h1>
         <div className='ps-price'>{product.price}</div>
         <div className='ps-colors'>{product.colors}</div>
-        <div className='ps-sizes-container'>
-            <h3 className='ps-sizes-title'>
-                Sizes
-            </h3>
-            <div className='ps-sizes-items'>
-                {renderSizes(product.sizes)}
-            </div>
-            <div className='ps-sizes-guide'>
-                <span>Size guide</span>
-            </div>
-        </div>
+            {product.sizes ?
+                <>
+                <h3 className='ps-sizes-title'>
+                    Sizes
+                </h3>
+                <div className='ps-sizes-container'>
+                    <div className='ps-sizes-items'>
+                        {renderSizes(product.sizes)}
+                    </div> 
+                    <div className='ps-sizes-guide'>
+                        <span>Size guide</span>
+                    </div>
+                </div>
+                </> : 
+            ""}
         <div className='ps-buttons-group'>
                 <Button type="button1 black" text="ADD TO BAG" />
                 <Button type="button2 heart no-right-arrow" />
