@@ -50,7 +50,7 @@ function App() {
           <ProductDetail />
         </>
       }></Route>
-      <Route path="/category/:categoryId" element={
+      <Route path="/category/:categoryName" element={
         <>
           <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />
           <Category />
