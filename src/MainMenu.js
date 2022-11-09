@@ -1,13 +1,8 @@
 import './MainMenu.css'
 import { Link } from 'react-router-dom'
+import { categoryLink } from './functions/categoryLink'
 
 const MainMenu = (props) => {
-
-    const categoryLink = (...categories) => {
-        let link = "/category/"
-        for (let category of categories) link += category.replace(" ","_")+"-";
-        return link.replace(/-$/, "").toLowerCase()
-    }
 
     const renderMainMenu = (items) => {
         return items.map((item,index) => {
@@ -56,8 +51,8 @@ const MainMenu = (props) => {
                 <li className="main-menu-subcategory-title">
 
                     {!Array.isArray(subcategory.title) ?
-                        <Link to={categoryLink(subCategoryTitle,categoryTitle)}>{subCategoryTitle}</Link> :
-                        <Link to={categoryLink(subCategoryTitle,categoryTitle)}>{subCategoryTitle}
+                        <Link to={categoryLink(categoryTitle,subCategoryTitle)}>{subCategoryTitle}</Link> :
+                        <Link to={categoryLink(categoryTitle,subCategoryTitle)}>{subCategoryTitle}
                         <img className="main-menu-subcategory-image" src={subcategory.title[1]}></img> 
                         </Link>
                     }

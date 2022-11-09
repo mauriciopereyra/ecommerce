@@ -1,0 +1,39 @@
+.breadcrumbs {
+    list-style: none;
+    margin:3rem 0 2rem;
+    padding: 0;
+    display:flex;
+    /* gap:1rem; */
+}
+
+.breadcrumb-item {
+    transition: all 0.2s;
+    padding: 0.2rem 0.1rem;
+    text-transform: capitalize;
+    font-weight: 300;
+
+}
+
+.breadcrumb-item a {
+    text-decoration: underline;
+}
+
+.breadcrumb-item a:hover {
+    background: black;
+    color:white;
+}
+
+.breadcrumb-item::after {
+    content: "/";
+    padding:0 0.2rem;
+}
+
+.breadcrumb-item:first-child:after, .breadcrumb-item:last-child:after {
+    content: "";
+}
+
+.breadcrumb-back a{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}

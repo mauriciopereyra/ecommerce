@@ -2,8 +2,9 @@ import './Category.css'
 import productsList from './data/productsList'
 import ProductListing from './ProductListing'
 import Pagination from './Pagination'
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import CategoryBreadcrums from './CategoryBreadcrums';
 
 const Category = () => {
 
@@ -13,6 +14,7 @@ const Category = () => {
     const { categoryName } = useParams()
     const selectedCategories = categoryName.split("-")
     const subCategoryName = selectedCategories.at(-1).toUpperCase()
+    const navigate = useNavigate()
 
     const items = productsList.filter(item => {
         var matchesCategories = true
@@ -44,6 +46,7 @@ const Category = () => {
 
     return (
         <div className='category-section wrapped indented'>
+            <CategoryBreadcrums categories={selectedCategories} />
             <h1 className='category-title'>{subCategoryName}
                 <span className='category-total-items'>[{items.length}]</span>
             </h1>

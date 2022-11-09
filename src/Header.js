@@ -6,11 +6,13 @@ import BlackRow from './BlackRow'
 import { headerPromo } from './data/promos'
 import { menu } from './data/icons'
 import ResponsiveMenu from './ResponsiveMenu'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Header = (props) => {
     const [ isMenuOpen, setMenuOpen ] = useState(false)
-
+    const location = useLocation()
+    const navigate = useNavigate()
     toggleHeader(window)
 
     const renderTopRow = (items) => {
