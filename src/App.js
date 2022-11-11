@@ -21,6 +21,7 @@ import {Route, Routes, useParams} from 'react-router-dom'
 import ProductDetail from './ProductDetail';
 import NotFound from './NotFound';
 import Category from './Category';
+import Wishlist from './Wishlist';
 
 function App() {
 
@@ -56,6 +57,12 @@ function App() {
           <Category />
         </>
       }></Route>
+      <Route path="/wishlist" element={
+        <>
+          <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />
+          <Wishlist />
+        </>
+      }></Route>=
       <Route path='*' element={
         <>
           <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />

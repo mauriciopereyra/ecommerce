@@ -5,9 +5,9 @@ import { logo } from './data/header'
 const ResponsiveMenu = (props) => {
 
     const renderItems = (items) => {
-        return items.map(item => {
+        return items.map((item, index) => {
             return (
-            <li className='r-menu-item'>
+            <li key={index} className='r-menu-item'>
                 <span>{item}</span><span className='arrow'>></span>
             </li>)
         })
