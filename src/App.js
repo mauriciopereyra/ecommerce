@@ -22,6 +22,7 @@ import ProductDetail from './ProductDetail';
 import NotFound from './NotFound';
 import Category from './Category';
 import Wishlist from './Wishlist';
+import { useSelector } from 'react-redux';
 
 function App() {
 
