@@ -19,7 +19,7 @@ const MainMenu = (props) => {
                             {item.bottomItems ?
                             <div className="main-menu-category-footer-container">
                                 <div className="main-menu-category-footer">
-                                {renderFooter(item.subcategories)}
+                                {renderFooter(item.subcategories,item.title)}
                             </div>
                             </div> :
                             ""                            
@@ -33,11 +33,14 @@ const MainMenu = (props) => {
         })
     }
 
-    const renderFooter = (subcategories) => {
+    const renderFooter = (subcategories,categoryTitle) => {
+        categoryTitle = !Array.isArray(categoryTitle) ? categoryTitle : categoryTitle[0]
+
         return subcategories.map((subcategory,index) => {
+            let subcategoryTitle = !Array.isArray(subcategory.title) ? subcategory.title : subcategory.title[0]
             return (
                 <div key={index} className={`main-menu-category-footer-item ${subcategory.featured ? "featured-footer" : ""}`}>
-                    <Link to="#">{subcategory.items.at(-1)}</Link>
+                    <Link to={categoryLink(categoryTitle,subcategoryTitle)}>{subcategory.items.at(-1)}</Link>
                 </div>
             )
         })
