@@ -1,14 +1,16 @@
 import './Button.css'
-import { down, heart, up } from './data/icons'
+import { down, heart, heartFill, up } from './data/icons'
 
-const Button = (props) => {
+const Button = ({type,text, ...buttonProps}) => {
     return (
-        <button className={props.type}>
-            {props.type.includes('heart') ? <span className='button-heart'>{heart}</span> : ""}
-            {props.text ? <span className='button-text'>{props.text}</span> : ""}
-            {props.type.includes('no-right-arrow') ? "" : <span className='right-arrow'>-></span>}
-            {props.type.includes('up-arrow') ? <span>{up}</span> : ""}
-            {props.type.includes('down-arrow') ? <span>{down}</span> : ""}
+        <button className={type} {...buttonProps}>
+            {type.includes('heart') ? <span className='button-heart'>
+                {type.includes('heart-fill') ? heartFill : heart}
+                </span> : ""}
+            {text ? <span className='button-text'>{text}</span> : ""}
+            {type.includes('no-right-arrow') ? "" : <span className='right-arrow'>-></span>}
+            {type.includes('up-arrow') ? <span>{up}</span> : ""}
+            {type.includes('down-arrow') ? <span>{down}</span> : ""}
         </button>
     )
 }

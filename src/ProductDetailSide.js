@@ -1,5 +1,7 @@
 import Button from './Button'
 import { useEffect, useState } from 'react'
+import { addWishlist, removeWishlist } from './redux/wishlistActions'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 
@@ -16,6 +18,26 @@ const ProductDetailSide = (props) => {
             onClick={() => setSize(size)}
             >{size}</div>
         })
+    }
+
+    const dispatcher = useDispatch()
+    const [ onWishlist, setOnWishlist ] = useState(false)
+    const wishlist = useSelector(state => state.wishlist)
+
+    useEffect(() => {
+        if (wishlist.items.includes(product)){
+            setOnWishlist(true)
+        } else {
+            setOnWishlist(false)
+        }
+    },[wishlist,product])
+    const handleHeartClick = (e) => {
+        if (onWishlist){
+            dispatcher(removeWishlist(product))
+        } else {
+            dispatcher(addWishlist(product))
+        }
+        setOnWishlist(state => !state)
     }
 
     return (
@@ -44,7 +66,10 @@ const ProductDetailSide = (props) => {
             ""}
         <div className='ps-buttons-group'>
                 <Button type="button1 black" text="ADD TO BAG" />
-                <Button type="button2 heart no-right-arrow" />
+                <Button onClick={(e) => handleHeartClick(e)} 
+                type={`button2 ${onWishlist ? 'heart-fill' : 'heart'} no-right-arrow`}>
+                    
+                </Button>
             </div>
         <ul className='ps-notes'>
             <li>11.11 deals: Buy more save more</li>

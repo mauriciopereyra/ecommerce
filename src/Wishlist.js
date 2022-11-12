@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from './Button'
 import productsList from './data/productsList'
@@ -5,6 +6,8 @@ import ProductListing from './ProductListing'
 import './Wishlist.css'
 
 const Wishlist = () => {
+
+    const wishlist = useSelector(state => state.wishlist)
 
     const renderListings = (items) => {
         return items.map((item,index) =>  {
@@ -18,11 +21,11 @@ const Wishlist = () => {
         <div className='wishlist-container'>
             <div className='wishlist-title'>
                 <h1>MY WISHLIST</h1>
-                <h3>5 ITEMS</h3>
+                <h3>{wishlist.items.length} ITEM{wishlist.items.length != 1 ? "S" : ""}</h3>
             </div>
             <div className='wishlist-content'>
                 <div className='wishlist-items'>
-                    {renderListings(productsList)}
+                    {renderListings(wishlist.items)}
                 </div>
                 <div className='wishlist-text'>
                     <h2>DON'T LOSE YOUR WISHLIST</h2>

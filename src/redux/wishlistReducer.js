@@ -9,8 +9,8 @@ export const wishlistReducer = (state=initialState,action) => {
             console.log(action.payload)
             console.log({...state, items: [...state.items,action.payload]})
             return {...state, items: [...state.items,action.payload]}
-        case 'removeWishlist':
-            return state
+        case 'REMOVE_WISHLIST':
+            return {...state, items: [...state.items.filter(item => item.id != action.payload.id)]}
         default:
             return state
     }

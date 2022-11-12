@@ -68,6 +68,28 @@
     border: #767677 1px solid;
 }
 
+.header-icon.wishlist {
+    position:relative;
+}
+
+.wishlist-number {
+    background: #2687af;
+    color: white;
+    border-radius: 100%;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+.wishlist-number {
+    position: absolute;
+    top: -16px;
+    right: -11px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (max-width:1000px) {
     .menu-icon {
         display: flex;
