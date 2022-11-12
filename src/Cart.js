@@ -1,7 +1,18 @@
 import './Cart.css'
+import CartProduct from './CartProduct'
 import { paymentMethods } from './data/images'
+import productsList from './data/productsList'
+
+const items = productsList.slice(0,2)
 
 const Cart = () => {
+    
+    const renderItems = (items) => {
+        return items.map(item => {
+            return <CartProduct product={item} />
+        })
+    }
+
     return (
         <div className="cart">
             <div className="cart-main">
@@ -10,7 +21,9 @@ const Cart = () => {
                     <p>TOTAL (3 items) <span className="cart-price">฿7,800</span></p>
                     <p>Items in your bag are not reserved — check out now to make them yours.</p>
                 </div>
-                <div className="cart-content"></div>
+                <div className="cart-content">
+                    {renderItems(items)}
+                </div>
             </div>
             <div className="cart-side">
                 <div className="cart-summary">

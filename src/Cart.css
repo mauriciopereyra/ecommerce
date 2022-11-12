@@ -52,6 +52,13 @@
     letter-spacing: 1px;
 }
 
+.cart-content {
+    display:flex;
+    flex-direction: column;
+    gap:2.5rem;
+    margin: 3rem 0;
+}
+
 @media (max-width:1000px){
     .cart {
         flex-direction: column;

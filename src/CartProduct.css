@@ -1,0 +1,98 @@
+.cart-product {
+    display:flex;
+    height:14rem;
+    border: 1px solid black;
+}
+
+.cart-product-image, .cart-product-image img {
+    height:100%;
+}
+
+.cart-product-description-container {
+    display: flex;
+    padding: 1.5rem 1rem 1rem 2rem;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.cart-product-description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.cpd-name-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cpd-size {
+    margin-top: 1rem;
+}
+
+.cpd-quantity {
+    margin-top: auto;
+}
+
+.cpd-quantity select{
+    height: 4rem;
+    width: 6rem;
+    font-size: 1.2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: 50%;
+    border: 1px solid #626262;
+    border-radius: 2px;
+    margin-right: 2rem;
+    padding: 1rem;
+    padding-right: 2rem;
+    cursor:pointer;
+}
+
+.cart-product-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bottom-row-mobile {
+    display:none;
+    margin-top: auto;
+}
+
+@media (max-width:700px) {
+    .cart-product {
+        border: none;
+        height:auto;
+    }
+    .cart-product-image {
+        max-width: 33vw;
+    }
+    .cart-product-image, .cart-product-image img {
+        width:100%;
+        height:auto;
+    }
+    .cart-product-image img {
+        margin-top: 1.5rem;
+    }
+    .cpd-price {
+        display: none;
+    }
+    .cpd-quantity {
+        display: none;
+    }
+    .bottom-row-mobile {
+        display: flex;
+        justify-content: space-between;
+        margin-top:1rem;
+    }
+    
+    .cpd-quantity-mobile select {
+    }
+}

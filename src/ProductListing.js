@@ -8,9 +8,7 @@ import { addWishlist, removeWishlist } from './redux/wishlistActions'
 const ProductListing = (props) => {
 
     const dispatcher = useDispatch()
-
     const product = props.product
-
     const [ onWishlist, setOnWishlist ] = useState(false)
     const wishlist = useSelector(state => state.wishlist)
 
