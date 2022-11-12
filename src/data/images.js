@@ -1,0 +1,1 @@
+export const paymentMethods = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/TH_Payment_Methods_with_text_tcm205-709576.png"

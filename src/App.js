@@ -23,6 +23,7 @@ import NotFound from './NotFound';
 import Category from './Category';
 import Wishlist from './Wishlist';
 import { useSelector } from 'react-redux';
+import Cart from './Cart';
 
 function App() {
 
@@ -63,7 +64,13 @@ function App() {
           <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />
           <Wishlist />
         </>
-      }></Route>=
+      }></Route>
+      <Route path="/cart" element={
+        <>
+          <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />
+          <Cart />
+        </>
+      }></Route>
       <Route path='*' element={
         <>
           <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />

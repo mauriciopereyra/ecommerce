@@ -34,7 +34,7 @@ const HeaderIcons = () => {
                 <Link to="/wishlist"><span className='wishlist-number'>{wishlist.items.length}</span></Link> : ""}
             </div>
             <div className='header-icon'>
-                <Link to='cart'>
+                <Link to='/cart'>
                     {cart}
                 </Link>
             </div>
