@@ -16,6 +16,10 @@ const Cart = () => {
         return total+parseInt(item.price.at(0).replace(",","").replace("$","").replace("฿",""))*item.quantity
     },0))
 
+    const cartQuantity = cart.items.reduce((total,item) => {
+        return total+item.quantity
+    },0)
+
     const renderItems = (items) => {
         return items.map(item => {
             return <CartProduct product={item} />
@@ -29,7 +33,7 @@ const Cart = () => {
                     {cart.items.length ?
                     <>
                         <h1>YOUR BAG</h1>
-                        <p>TOTAL ({cart.items.length} item{cart.items.length != 1 ? "s" : ""}) <span className="cart-price">{cartTotal}</span></p>
+                        <p>TOTAL ({cartQuantity} item{cartQuantity != 1 ? "s" : ""}) <span className="cart-price">{cartTotal}</span></p>
                         <p>Items in your bag are not reserved — check out now to make them yours.</p>
                     </> :
                     <>
@@ -48,7 +52,7 @@ const Cart = () => {
                     <div className="cart-summary">
                         <h2>ORDER SUMMARY</h2>
                         <div className="cart-summary-items">
-                            <span>{cart.items.length} ITEM{cart.items.length != 1 ? "S" : ""}</span>
+                            <span>{cartQuantity} ITEM{cartQuantity != 1 ? "S" : ""}</span>
                             <span>{cartTotal}</span>
                         </div>
                         <div className="cart-summary-delivery">
