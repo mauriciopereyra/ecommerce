@@ -1,15 +1,16 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import Button from './Button'
 import productsList from './data/productsList'
 import './ProductDetail.css'
 import ProductDetailSide from './ProductDetailSide'
+import { addCart } from './redux/cartActions'
 import Row from './Row'
 
 
 const ProductDetail = () => {
-
 
     const { productId } = useParams()
     const product = productsList.find(product => product.id === parseInt(productId));

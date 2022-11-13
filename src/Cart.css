@@ -24,6 +24,7 @@
     gap: 1.2rem;
     border: #ebeaea solid 1px;
     padding: 2rem 1rem;
+    margin-bottom: 3rem;
 }
 
 .cart-summary > div {
@@ -44,12 +45,12 @@
 }
 
 .cart-payment_methods {
-    margin-top: 3rem;
 }
 
 .cart-payment_methods h4 {
     font-size: 0.8rem;
     letter-spacing: 1px;
+    margin-top:0;
 }
 
 .cart-content {

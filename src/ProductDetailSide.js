@@ -2,6 +2,8 @@ import Button from './Button'
 import { useEffect, useState } from 'react'
 import { addWishlist, removeWishlist } from './redux/wishlistActions'
 import { useDispatch, useSelector } from 'react-redux'
+import { addCart } from './redux/cartActions'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -23,6 +25,23 @@ const ProductDetailSide = (props) => {
     const dispatcher = useDispatch()
     const [ onWishlist, setOnWishlist ] = useState(false)
     const wishlist = useSelector(state => state.wishlist)
+
+    const [ onCart, setOnCart ] = useState(false)
+    const cart = useSelector(state => state.cart)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (cart.items.includes(product)){
+            setOnCart(true)
+        } else {
+            setOnCart(false)
+        }
+    },[cart])
+
+    const handleAddCart = (e) => {
+        dispatcher(addCart(product))
+    }
 
     useEffect(() => {
         if (wishlist.items.includes(product)){
@@ -65,7 +84,13 @@ const ProductDetailSide = (props) => {
                 </> : 
             ""}
         <div className='ps-buttons-group'>
-                <Button type="button1 black" text="ADD TO BAG" />
+                {onCart ?
+                <Button type="button2" text="ADDED. GO TO BAG" 
+                onClick={() => {navigate('/cart')}}/> : 
+                <Button type="button1 black" text="ADD TO BAG" 
+                onClick={() => handleAddCart()}
+                /> }
+                
                 <Button onClick={(e) => handleHeartClick(e)} 
                 type={`button2 ${onWishlist ? 'heart-fill' : 'heart'} no-right-arrow`}>
                     

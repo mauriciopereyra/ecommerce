@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { account, cart, heart, heartFill, search } from './data/icons'
+import { account, cart, cartFill, heart, heartFill, search } from './data/icons'
 import './HeaderIcons.css'
 
 const HeaderIcons = () => {
     const wishlist = useSelector(state => state.wishlist)
+    const cartState = useSelector(state => state.cart)
 
     return (
         <div className='right-side-menu'>
@@ -33,10 +34,12 @@ const HeaderIcons = () => {
                 {wishlist.items.length ? 
                 <Link to="/wishlist"><span className='wishlist-number'>{wishlist.items.length}</span></Link> : ""}
             </div>
-            <div className='header-icon'>
+            <div className='header-icon cart-icon'>
                 <Link to='/cart'>
-                    {cart}
+                    {cartState.items.length ? cartFill : cart}
                 </Link>
+                {cartState.items.length ? 
+                <Link to="/cart"><span className='cart-number'>{cartState.items.length}</span></Link> : ""}
             </div>
         </div>
     )

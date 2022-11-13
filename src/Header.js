@@ -7,7 +7,7 @@ import { headerPromo } from './data/promos'
 import { menu } from './data/icons'
 import ResponsiveMenu from './ResponsiveMenu'
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Header = (props) => {
     const [ isMenuOpen, setMenuOpen ] = useState(false)
@@ -37,8 +37,8 @@ const Header = (props) => {
                     </div>
                     <div className='bottom-row'>
                         <div onClick={() => setMenuOpen(true)} className='header-icon menu-icon'>{menu}</div>
-                        <a href='/' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
-                        </a>
+                        <Link to='/' className='logo' style={{backgroundImage:`url(${props.logo})`}}>
+                        </Link>
                         <MainMenu mainMenu={props.mainMenu} />
                         <HeaderIcons />              
                     </div>
