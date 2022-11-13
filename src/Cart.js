@@ -10,6 +10,7 @@ import { formatCurrency } from './functions/formatCurrency'
 const Cart = () => {
 
     const cart = useSelector(state => state.cart)
+    console.log(cart)
     const navigate = useNavigate()
 
     const cartTotal = formatCurrency.format(cart.items.reduce((total,item) => {

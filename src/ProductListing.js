@@ -13,7 +13,7 @@ const ProductListing = (props) => {
     const wishlist = useSelector(state => state.wishlist)
 
     useEffect(() => {
-        if (wishlist.items.includes(product)){
+        if (wishlist.items.filter(item => item.id == product.id).length){
             setOnWishlist(true)
         } else {
             setOnWishlist(false)

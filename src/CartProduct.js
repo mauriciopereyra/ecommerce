@@ -20,7 +20,7 @@ const CartProduct = (props) => {
     const productTotal = formatCurrency.format(parseInt(product.price.at(0).replace(",","").replace("$","").replace("฿",""))*product.quantity)
 
     useEffect(() => {
-        if (wishlist.items.includes(product)){
+        if (wishlist.items.filter(item => item.id == product.id).length){
             setOnWishlist(true)
         } else {
             setOnWishlist(false)
@@ -28,7 +28,7 @@ const CartProduct = (props) => {
     },[wishlist])
 
     useEffect(() => {
-        if (cart.items.includes(product)){
+        if (cart.items.filter(item => item.id == product.id).length){
             setOnCart(true)
         } else {
             setOnCart(false)

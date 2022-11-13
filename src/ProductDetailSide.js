@@ -32,7 +32,7 @@ const ProductDetailSide = (props) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (cart.items.includes(product)){
+        if (cart.items.filter(item => item.id == product.id).length){
             setOnCart(true)
         } else {
             setOnCart(false)
@@ -44,7 +44,7 @@ const ProductDetailSide = (props) => {
     }
 
     useEffect(() => {
-        if (wishlist.items.includes(product)){
+        if (wishlist.items.filter(item => item.id == product.id).length){
             setOnWishlist(true)
         } else {
             setOnWishlist(false)

@@ -7,6 +7,9 @@ import './HeaderIcons.css'
 const HeaderIcons = () => {
     const wishlist = useSelector(state => state.wishlist)
     const cartState = useSelector(state => state.cart)
+    const cartTotalItems = cartState.items.reduce((total,item) => {
+        return total + item.quantity
+    },0)
 
     return (
         <div className='right-side-menu'>
@@ -39,7 +42,7 @@ const HeaderIcons = () => {
                     {cartState.items.length ? cartFill : cart}
                 </Link>
                 {cartState.items.length ? 
-                <Link to="/cart"><span className='cart-number'>{cartState.items.length}</span></Link> : ""}
+                <Link to="/cart"><span className='cart-number'>{cartTotalItems}</span></Link> : ""}
             </div>
         </div>
     )
