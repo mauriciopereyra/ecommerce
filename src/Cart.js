@@ -14,7 +14,7 @@ const Cart = () => {
     const navigate = useNavigate()
 
     const cartTotal = formatCurrency.format(cart.items.reduce((total,item) => {
-        return total+parseInt(item.price.at(0).replace(",","").replace("$","").replace("฿",""))*item.quantity
+        return total+parseInt(item.price.replace(",","").replace("$","").replace("฿",""))*item.quantity
     },0))
 
     const cartQuantity = cart.items.reduce((total,item) => {

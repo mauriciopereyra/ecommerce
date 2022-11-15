@@ -17,7 +17,7 @@ const CartProduct = (props) => {
     const [ onCart, setOnCart ] = useState(false)
     const cart = useSelector(state => state.cart)
 
-    const productTotal = formatCurrency.format(parseInt(product.price.at(0).replace(",","").replace("$","").replace("฿",""))*product.quantity)
+    const productTotal = formatCurrency.format(parseInt(product.price.replace(",","").replace("$","").replace("฿",""))*product.quantity)
 
     useEffect(() => {
         if (wishlist.items.filter(item => item.id == product.id).length){

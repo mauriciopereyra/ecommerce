@@ -1,5 +1,5 @@
 import './Category.css'
-import productsList from './data/productsList'
+import productsList, { scrappedProducts } from './data/productsList'
 import ProductListing from './ProductListing'
 import Pagination from './Pagination'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -16,7 +16,7 @@ const Category = () => {
     const subCategoryName = selectedCategories.at(-1).toUpperCase()
     const navigate = useNavigate()
 
-    const items = productsList.filter(item => {
+    const items = scrappedProducts.filter(item => {
         var matchesCategories = true
         for (let category of selectedCategories) {
             if (!item.categories.includes(category)){
