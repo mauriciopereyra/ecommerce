@@ -60,10 +60,14 @@
 .r-menu-item {
     flex-basis: 2.8rem;
     flex-shrink: 0;
+
+}
+
+.r-menu-item a {
     display:flex;
     justify-content: space-between;
-    cursor: pointer;
 }
+
 
 .r-menu-item.arrow {
 }

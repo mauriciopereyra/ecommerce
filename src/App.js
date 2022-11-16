@@ -34,9 +34,9 @@ function App() {
         <>
           <Header topRow={topRow} mainMenu={mainMenu} logo={logo} fixed={true} />
           <BlackRow promo={homePromo} closable={true} style="body-black-row" />
-          <Banner banner={banner_adiclub} textColor={'white'} style='banner-small' />
-          <Banner banner={banner_11} textColor={'white'} />
-          <Banner button='black' banner={banner_members} style='banner-with-video' />
+          <Banner banner={banner_adiclub} textColor={'white'} style='banner-small' link="/category/men+featured+adiclub member exclusives" />
+          <Banner banner={banner_11} textColor={'white'} link="/category/outlet" />
+          <Banner button='black' banner={banner_members} style='banner-with-video' link="/category/men+featured+adiclub member exclusives" />
           <Row type='product' title="Still interested?" style={'big'} items={productsList.concat(productsList)} />
           <Row type='category' title={["WOMEN","MEN","KIDS"]} style={'indented'} items={[categoryCards,categoryCards,categoryCards]} />
           <Row type='product' title={["New Arrivals","What's trending","Release dates"]} style={'indented'} items={[productsList.concat(productsList,productsList,productsList),productsList,productsList]} />
@@ -78,7 +78,7 @@ function App() {
         </>
       }></Route>
     </Routes>
-    <CallToAction text={"BECOME A MEMBER & GET 15% OFF"} />
+    <CallToAction text={"BECOME A MEMBER & GET 15% OFF"} link="/category/men+featured+adiclub%20member%20exclusives" />
     <BigFooter items={bigFooter} />
     <BottomFooter items={bottomFooter} />
     </>

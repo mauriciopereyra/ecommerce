@@ -295,7 +295,7 @@ export const mainMenu = [
         title: 'BRANDS',
         bottomItems: true,
         subcategories: [
-            {title: ['','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/Originals_Brand_Nav_Title_tcm205-669567.png'],
+            {title: ['Originals','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/Originals_Brand_Nav_Title_tcm205-669567.png'],
             items: [
                 ['','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/Originals_Brand_Nav_Image_tcm205-843840.jpg'],
                 "Shoes",
@@ -308,7 +308,7 @@ export const mainMenu = [
                 "NMD",
                 "All adidas originals",
             ]},
-            {title: ['','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/brands-sportswear-title_tcm205-669571.png'],
+            {title: ['Sportswear','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/brands-sportswear-title_tcm205-669571.png'],
             items: [
                 ['','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/VRCT-ADI-NAV-IMG-001_tcm205-843841.jpg'],
                 "Men's Clothing",
@@ -316,7 +316,7 @@ export const mainMenu = [
                 "New Arrivals",
                 "All athletics",
             ]},
-            {title: ['','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/2020Sustainabilityheadline_tcm205-669463.jpeg'],
+            {title: ['Sustainability','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/2020Sustainabilityheadline_tcm205-669463.jpeg'],
             items: [
                 ['','https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enTH/Images/Adidas_2020_Sustainability_nav_image_tcm205-843843.jpg'],
                 "Parley",

@@ -23,7 +23,7 @@ const Cart = () => {
 
     const renderItems = (items) => {
         return items.map(item => {
-            return <CartProduct product={item} />
+            return <CartProduct item={item} />
         })
     }
 

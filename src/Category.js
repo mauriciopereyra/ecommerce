@@ -12,7 +12,7 @@ const Category = () => {
     const page = parseInt(searchParams.get("page"))
     const currentPage = page && parseInt(page) > 0 ? page : 1
     const { categoryName } = useParams()
-    const selectedCategories = categoryName.split("-")
+    const selectedCategories = categoryName.split("+")
     const subCategoryName = selectedCategories.at(-1).toUpperCase()
     const navigate = useNavigate()
 
@@ -35,7 +35,7 @@ const Category = () => {
     const renderListings = (items) => {
         return items.map((item,index) =>  {
             return (
-                <ProductListing key={index} visible={true} type="product" product={item} />
+                <ProductListing key={index} visible={true} type="product" item={item} />
                 )
         })
     }

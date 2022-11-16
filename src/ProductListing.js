@@ -6,14 +6,13 @@ import './ProductListing.css'
 import { addWishlist, removeWishlist } from './redux/wishlistActions'
 
 const ProductListing = (props) => {
-
+    const item = props.item
     const dispatcher = useDispatch()
-    const product = props.product
     const [ onWishlist, setOnWishlist ] = useState(false)
     const wishlist = useSelector(state => state.wishlist)
 
     useEffect(() => {
-        if (wishlist.items.filter(item => item.id == product.id).length){
+        if (wishlist.items.filter(item => item.id == item.id).length){
             setOnWishlist(true)
         } else {
             setOnWishlist(false)
@@ -25,33 +24,33 @@ const ProductListing = (props) => {
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
         if (onWishlist){
-            dispatcher(removeWishlist(product))
+            dispatcher(removeWishlist(item))
         } else {
-            dispatcher(addWishlist(product))
+            dispatcher(addWishlist(item))
         }
         setOnWishlist(state => !state)
     }
 
     return (
-        <Link to={`/product/${product.id}`}>
+        <Link to={item.link ? item.link : `/product/${item.id}`}>
             <div className={`${props.visible ? 'product-listing' : 'product-listing-hidden'}
                 ${props.type=='category' ? 'category' : ''}
                 `} 
                 style={{...props.style}}
             >
                 <div className="product-listing-image">
-                    <img src={product.image}></img>
+                    <img src={item.image}></img>
                     {props.type == 'product' ? 
                         <div onClick={(e) => handleHeartClick(e)}
                         className="product-listing-heart">
                             {onWishlist ? heartFill : heart}
                         </div> 
                     : ""}
-                    {product.price ? <div className='product-listing-price'>{product.price}</div> : ""}
+                    {item.price ? <div className='product-listing-price'>{item.price}</div> : ""}
                 </div>
                 <div className="product-listing-text">
-                    <div className="product-listing-title">{product.title}</div>
-                    <div className="product-listing-collection">{product.collection}</div>
+                    <div className="product-listing-title">{item.title}</div>
+                    <div className="product-listing-collection">{item.collection}</div>
                 </div>
             </div>
         </Link>

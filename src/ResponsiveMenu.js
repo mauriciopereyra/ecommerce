@@ -1,14 +1,16 @@
 import './ResponsiveMenu.css'
 import { responsiveMenu } from './data/responsiveMenu'
 import { logo } from './data/header'
-
+import { Link } from 'react-router-dom'
 const ResponsiveMenu = (props) => {
 
     const renderItems = (items) => {
         return items.map((item, index) => {
             return (
             <li key={index} className='r-menu-item'>
-                <span>{item}</span><span className='arrow'>></span>
+                <Link to={item[1]}>
+                    <span>{item[0]}</span><span className='arrow'>></span>
+                </Link>
             </li>)
         })
     }

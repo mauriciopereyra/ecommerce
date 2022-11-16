@@ -26,9 +26,9 @@ const HeaderIcons = () => {
                 </a>
             </div> */}
             <div className='header-icon account-icon'>
-                <a href='#'>
-                    {account}
-                </a>
+            <Link to="/category/men+featured+adiclub%20member%20exclusives">
+                {account}
+            </Link>
             </div>
             <div className='header-icon wishlist'>
                 <Link to='/wishlist'>

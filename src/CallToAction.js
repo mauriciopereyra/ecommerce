@@ -1,5 +1,6 @@
 import Button from './Button'
 import './CallToAction.css'
+import { Link } from 'react-router-dom'
 
 const CallToAction = (props) => {
     return (
@@ -9,7 +10,9 @@ const CallToAction = (props) => {
                     {props.text}
                 </h2>
                 <div className='cta-button-wrapper'>
-                    <Button text="SIGN UP FOR FREE" type='button1 black' />
+                    <Link to={props.link}>
+                        <Button text="SIGN UP FOR FREE" type='button1 black' />
+                    </Link>
                 </div>
             </div>
         </div>

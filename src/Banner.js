@@ -1,5 +1,6 @@
 import './Banner.css'
 import Button from './Button'
+import { Link } from 'react-router-dom'
 
 const Banner = (props) => {
 
@@ -14,8 +15,11 @@ const Banner = (props) => {
                 <div className='banner-description'>
                     {props.banner.title ? <h1>{props.banner.title}</h1> : ""}
                     {props.banner.description ? <p>{props.banner.description}</p> : ""}
-                    {props.banner.cta ? <Button text={props.banner.cta} 
-                    type={props.button == 'black' ? 'button1 black' : 'button1'} /> : ""}
+                    {props.banner.cta ? 
+                    <Link to={props.link}>
+                        <Button text={props.banner.cta} type={props.button == 'black' ? 'button1 black' : 'button1'} /> 
+                    </Link>
+                    : ""}
                 </div>
             </div>
 

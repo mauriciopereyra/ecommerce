@@ -1,21 +1,27 @@
 export const linksGroups1 = [
     {
         title: 'running shoes',
+        link: '/category/men+shoes+running',
     },
     {
-        title: 'tracksuits',
+        title: 'jerseys',
+        link: '/category/men+clothing+jerseys',
     },
     {
         title: 'shoes',
+        link: '/category/men+shoes',
     },
     {
-        title: 'jacket',
+        title: 'hoodies',
+        link: '/category/men+clothing+hoodies',
     },
     {
         title: 'slides',
+        link: '/category/men+shoes+slides',
     },
     {
-        title: 'sandals',
+        title: 'balls',
+        link: '/category/men+accessories+balls',
     },
 ]
 

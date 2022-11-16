@@ -8,7 +8,7 @@ const CategoryBreadcrums = (props) => {
 
     const renderBreadcrumbs = (items) => {
         return items.map((item,index) => {
-            return (<li className="breadcrumb-item"><Link to={categoryLink(...props.categories.slice(0,index+1))}>{item}</Link></li>)
+            return (<li key={index} className="breadcrumb-item"><Link to={categoryLink(...props.categories.slice(0,index+1))}>{item}</Link></li>)
     })
 }
 

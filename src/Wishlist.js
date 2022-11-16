@@ -12,7 +12,7 @@ const Wishlist = () => {
     const renderListings = (items) => {
         return items.map((item,index) =>  {
             return (
-                <ProductListing key={index} visible={true} type="product" product={item} />
+                <ProductListing key={index} visible={true} type="product" item={item} />
                 )
         })
     }

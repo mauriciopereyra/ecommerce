@@ -1,15 +1,15 @@
 
 export const responsiveMenu =
     [
-        'MEN',
-        'WOMEN',
-        'KIDS',
-        'SPORTS',
-        'BRANDS',
-        'OUTLET',
-        'My Profile',
-        'Release Dates',
-        'Store Locator',
-        'Help',
-        'FEEDBACK',
+        ['MEN','/category/men'],
+        ['WOMEN','/category/women'],
+        ['KIDS','/category/kids'],
+        ['SPORTS','/category/sports'],
+        ['BRANDS','/category/brands'],
+        ['OUTLET','/category/outlet'],
+        ['My Profile','/'],
+        ['Release Dates','/'],
+        ['Store Locator','/'],
+        ['Help','/'],
+        ['FEEDBACK','/'],
     ]

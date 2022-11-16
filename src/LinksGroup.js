@@ -1,9 +1,18 @@
+import { Link } from 'react-router-dom'
 import './LinksGroup.css'
 
 const LinksGroup = (props) => {
     const renderItems = (items) => {
         return items.map((item,index) => {
-            return <h2  key={index} className='links-group-item'>{item.title}</h2>
+            return (
+                
+                    <h2  key={index} className='links-group-item'>
+                        <Link to={item.link}>
+                            {item.title}
+                        </Link>
+                    </h2>
+                
+            )
         })
     }
 

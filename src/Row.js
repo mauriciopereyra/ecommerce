@@ -27,11 +27,11 @@ const Row = (props) => {
         return items.map((item,index) => {
             switch (item.type) {
                 case 'category':
-                    return <CategoryCard key={index} visible={activeTab == tab} currentPage={currentPage} title={item.title} style={style} /> 
+                    return <CategoryCard key={index} visible={activeTab == tab} currentPage={currentPage} item={item} style={style} /> 
                 default:
                     return props.type == "teaser" ? 
-                           <TeaserCard key={index} currentPage={currentPage} title={item.title} description={item.description}  media={item.media} style={style} /> : 
-                           <ProductListing key={index} visible={activeTab == tab} currentPage={currentPage} type={props.type} style={style} product={item} />
+                           <TeaserCard key={index} currentPage={currentPage} item={item} /> : 
+                           <ProductListing key={index} visible={activeTab == tab} currentPage={currentPage} type={props.type} style={style} item={item} />
             }
         })
     }
