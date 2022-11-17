@@ -1,5 +1,5 @@
 .category-card {
-    /* height:336px; */
+    /* min-height:336px; */
     width: 252px;
     border: solid white 1px;
     display: flex;

@@ -3,7 +3,7 @@ import Row from './Row'
 import productsList from './data/productsList';
 import Banner from './Banner';
 import { banner_11, banner_adiclub, banner_members, banner_thebe } from './data/banners'
-import categoryCards from './data/categoryCards';
+import { kidCards, menCards, womenCards } from './data/categoryCards';
 import { whatsHotCards, trendingCards } from './data/teaserCards';
 import LinksGroup from './LinksGroup';
 import { linksGroups1 } from './data/linksGroups'
@@ -39,7 +39,7 @@ function App() {
           <Banner banner={banner_11} textColor={'white'} link="/category/outlet" />
           <Banner button='black' banner={banner_members} style='banner-with-video' link="/category/men+featured+adiclub member exclusives" />
           {/* <Row type='product' title="Still interested?" style={'big'} items={testScrappedItems} /> */}
-          <Row type='category' title={["WOMEN","MEN","KIDS"]} style={'indented'} items={[categoryCards,categoryCards,categoryCards]} />
+          <Row type='category' title={["WOMEN","MEN"]} style={'indented'} items={[womenCards, menCards]} />
           <Row type='product' title={["New Arrivals","What's trending"]} style={'indented'} items={[filterProducts("new arrivals",12),filterProducts("clothing",12)]} />
           <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />
           <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={filterProducts("sportswear",12)} />
