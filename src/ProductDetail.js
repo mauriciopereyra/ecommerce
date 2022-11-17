@@ -9,6 +9,7 @@ import ProductDetailSide from './ProductDetailSide'
 import { addCart } from './redux/cartActions'
 import Row from './Row'
 import scrappedItems from './data/scrappedItems.json';
+import { addStillInterested } from './redux/stillInterestedActions'
 
 
 const ProductDetail = () => {
@@ -16,6 +17,8 @@ const ProductDetail = () => {
     const { productId } = useParams()
     const product = scrappedItems.find(product => product.id === parseInt(productId));
     const [ isExpanded, setExpanded ] = useState(false)
+
+    const dispatcher = useDispatch()
 
     const renderImages = (images) => {
         return images.map(image => {
@@ -26,6 +29,10 @@ const ProductDetail = () => {
             )
         })
     }
+
+    useEffect(() => {
+        dispatcher(addStillInterested(product))
+    },[product])
 
     return (
         <div className="product-detail">

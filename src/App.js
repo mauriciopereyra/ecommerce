@@ -28,6 +28,8 @@ import { filterProducts } from './functions/filterProducts';
 
 function App() {
 
+  const stillInterested = useSelector(state => state.stillInterested)
+
   return (
     <>
     <Routes>
@@ -38,7 +40,7 @@ function App() {
           <Banner banner={banner_adiclub} textColor={'white'} style='banner-small' link="/category/men+featured+adiclub member exclusives" />
           <Banner banner={banner_11} textColor={'white'} link="/category/outlet" />
           <Banner button='black' banner={banner_members} style='banner-with-video' link="/category/men+featured+adiclub member exclusives" />
-          {/* <Row type='product' title="Still interested?" style={'big'} items={testScrappedItems} /> */}
+          { stillInterested.items.length ? <Row type='product' title="Still interested?" style={'big'} items={stillInterested.items} /> : "" }
           <Row type='category' title={["WOMEN","MEN"]} style={'indented'} items={[womenCards, menCards]} />
           <Row type='product' title={["New Arrivals","What's trending"]} style={'indented'} items={[filterProducts("new arrivals",12),filterProducts("clothing",12)]} />
           <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />

@@ -52,7 +52,10 @@ const Category = () => {
                 <span className='category-total-items'>[{items.length}]</span>
             </h1>
             <div className='category-products'>
-                {renderListings(itemsInPage)}
+                {items.length ?
+                renderListings(itemsInPage) :
+                <h1>No products available in this category</h1>
+            }
             </div>
             <Pagination totalPages={totalPages} currentPage={currentPage} />
         </div>
