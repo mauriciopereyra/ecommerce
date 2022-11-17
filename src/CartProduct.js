@@ -10,7 +10,7 @@ import { addWishlist, removeWishlist } from './redux/wishlistActions'
 const CartProduct = (props) => {
 
     const dispatcher = useDispatch()
-    const product = props.product
+    const product = props.item
     const [ onWishlist, setOnWishlist ] = useState(false)
     const wishlist = useSelector(state => state.wishlist)
 

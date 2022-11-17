@@ -24,6 +24,9 @@ import Category from './Category';
 import Wishlist from './Wishlist';
 import { useSelector } from 'react-redux';
 import Cart from './Cart';
+import scrappedItems from './data/scrappedItems.json';
+
+const testScrappedItems = scrappedItems.slice(0,10)
 
 function App() {
 
@@ -37,7 +40,7 @@ function App() {
           <Banner banner={banner_adiclub} textColor={'white'} style='banner-small' link="/category/men+featured+adiclub member exclusives" />
           <Banner banner={banner_11} textColor={'white'} link="/category/outlet" />
           <Banner button='black' banner={banner_members} style='banner-with-video' link="/category/men+featured+adiclub member exclusives" />
-          <Row type='product' title="Still interested?" style={'big'} items={productsList.concat(productsList)} />
+          <Row type='product' title="Still interested?" style={'big'} items={testScrappedItems} />
           <Row type='category' title={["WOMEN","MEN","KIDS"]} style={'indented'} items={[categoryCards,categoryCards,categoryCards]} />
           <Row type='product' title={["New Arrivals","What's trending","Release dates"]} style={'indented'} items={[productsList.concat(productsList,productsList,productsList),productsList,productsList]} />
           <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />

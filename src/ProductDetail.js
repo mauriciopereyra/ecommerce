@@ -8,12 +8,13 @@ import './ProductDetail.css'
 import ProductDetailSide from './ProductDetailSide'
 import { addCart } from './redux/cartActions'
 import Row from './Row'
+import scrappedItems from './data/scrappedItems.json';
 
 
 const ProductDetail = () => {
 
     const { productId } = useParams()
-    const product = scrappedProducts.find(product => product.id === parseInt(productId));
+    const product = scrappedItems.find(product => product.id === parseInt(productId));
     const [ isExpanded, setExpanded ] = useState(false)
 
     const renderImages = (images) => {

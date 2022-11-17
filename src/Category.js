@@ -5,6 +5,7 @@ import Pagination from './Pagination'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import CategoryBreadcrums from './CategoryBreadcrums';
+import scrappedItems from './data/scrappedItems.json';
 
 const Category = () => {
 
@@ -12,14 +13,14 @@ const Category = () => {
     const page = parseInt(searchParams.get("page"))
     const currentPage = page && parseInt(page) > 0 ? page : 1
     const { categoryName } = useParams()
-    const selectedCategories = categoryName.split("+")
+    const selectedCategories = categoryName.split("+").map(category => category.toLowerCase())
     const subCategoryName = selectedCategories.at(-1).toUpperCase()
     const navigate = useNavigate()
 
-    const items = scrappedProducts.filter(item => {
+    const items = scrappedItems.filter(item => {
         var matchesCategories = true
         for (let category of selectedCategories) {
-            if (!item.categories.includes(category)){
+            if (!item.categories.some(categories => categories.toLowerCase() === category.toLowerCase())){
                 matchesCategories = false
                 break
             }

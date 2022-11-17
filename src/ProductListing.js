@@ -12,12 +12,12 @@ const ProductListing = (props) => {
     const wishlist = useSelector(state => state.wishlist)
 
     useEffect(() => {
-        if (wishlist.items.filter(item => item.id == item.id).length){
+        if (wishlist.items.filter(this_item => this_item.id == item.id).length){
             setOnWishlist(true)
         } else {
             setOnWishlist(false)
         }
-    },[wishlist])
+    },[wishlist,item])
 
     const handleHeartClick = (e) => {
         e.preventDefault()
