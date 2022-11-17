@@ -24,9 +24,7 @@ import Category from './Category';
 import Wishlist from './Wishlist';
 import { useSelector } from 'react-redux';
 import Cart from './Cart';
-import scrappedItems from './data/scrappedItems.json';
-
-const testScrappedItems = scrappedItems.slice(0,10)
+import { filterProducts } from './functions/filterProducts';
 
 function App() {
 
@@ -40,11 +38,11 @@ function App() {
           <Banner banner={banner_adiclub} textColor={'white'} style='banner-small' link="/category/men+featured+adiclub member exclusives" />
           <Banner banner={banner_11} textColor={'white'} link="/category/outlet" />
           <Banner button='black' banner={banner_members} style='banner-with-video' link="/category/men+featured+adiclub member exclusives" />
-          <Row type='product' title="Still interested?" style={'big'} items={testScrappedItems} />
+          {/* <Row type='product' title="Still interested?" style={'big'} items={testScrappedItems} /> */}
           <Row type='category' title={["WOMEN","MEN","KIDS"]} style={'indented'} items={[categoryCards,categoryCards,categoryCards]} />
-          <Row type='product' title={["New Arrivals","What's trending","Release dates"]} style={'indented'} items={[productsList.concat(productsList,productsList,productsList),productsList,productsList]} />
+          <Row type='product' title={["New Arrivals","What's trending"]} style={'indented'} items={[filterProducts("new arrivals",12),filterProducts("clothing",12)]} />
           <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />
-          <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={productsList.concat(productsList)} />
+          <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={filterProducts("sportswear",12)} />
           <Row type='teaser' title="TRENDING" style={'indented wrapped'} items={trendingCards} />
           <LinksGroup title="NOW POPULAR IN MEN'S" items={linksGroups1} />
           <ArticlesContainer items={[article1,article2]} />

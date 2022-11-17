@@ -46,7 +46,7 @@ export const trendingCards = [
             source: 'https://brand.assets.adidas.com/video/upload/q_auto,vc_auto,c_scale,w_0.5/video/upload/football-fw22-manchesterunited-away-hp-tcc_pm02ak.mp4',
             type: 'video',
         },
-        link: '/category/sports+football',
+        link: '/product/6923',
     },
     {
         title: 'SUPPORT IS EVERYTHING',
