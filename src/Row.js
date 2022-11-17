@@ -14,12 +14,18 @@ const Row = (props) => {
     const nextPage = () => changePage(currentPage+1)
     const container = useRef()
     const [offset, setOffset] = useState(0)
+    const [ sliderButtonsVisible, setSliderButtonsVisible] = useState(false)
 
     const changePage = (newPage) => {
-        const [page, offset] = styleInfo(props,window,activeTab,container,currentPage,newPage)
+        const [page, offset, shouldBeVisible] = styleInfo(props,window,activeTab,container,currentPage,newPage)
         setPage(page)
         setOffset(offset)
+        setSliderButtonsVisible(shouldBeVisible)
     }
+
+    useEffect(() =>  {
+        changePage(0)
+    },[activeTab])
 
     const renderListings = (items,tab=0) => {
         const style = {'transform':`translateX(${-offset}px)`}
@@ -63,7 +69,9 @@ const Row = (props) => {
                  {renderTitles(props.title)}
                  </div> :
                  <h1 className="indented wrapped">{props.title}</h1>}
+                { sliderButtonsVisible ?
                 <SliderButtons prevPage={prevPage} nextPage={nextPage} />
+                : ""}
             </div>  
             <div ref={container} className="row-items">
                 {renderRows(props.items)}

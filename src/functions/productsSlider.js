@@ -39,25 +39,13 @@ export const styleInfo = (props,window,activeTab,container,currentPage,requested
         }
     }
 
-    // console.log(
-    //     {
-    //         containerWidth: containerWidth,
-    //         itemWidth: itemWidth,
-    //         items: items, 
-    //         itemsPerPage: itemsPerPage, 
-    //         itemsFitPage: itemsFitPage, 
-    //         totalPages: totalPages, 
-    //         currentPage: currentPage,
-    //         requestedPage: requestedPage,
-    //         lastPage: lastPage,
-    //         newOffset: newOffset,
-    //         newPage: newPage,
-    //     }
-    // )
+    const visible = totalPages > 1
+    console.log(visible)
 
     return ([
         newPage,
         newOffset,
+        visible,
     ])
 
 }
