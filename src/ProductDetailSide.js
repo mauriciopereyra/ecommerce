@@ -4,12 +4,14 @@ import { addWishlist, removeWishlist } from './redux/wishlistActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { addCart } from './redux/cartActions'
 import { useNavigate } from 'react-router-dom'
+import ProductDetailImages from './ProductDetailImages'
 
 
 
 const ProductDetailSide = (props) => {
     
     const product = props.product
+    const isExpanded = props.isExpanded
 
     const [ sizeSelected, setSize ] = useState(false)
 
@@ -67,6 +69,9 @@ const ProductDetailSide = (props) => {
         </div>
         <h1 className='ps-title'>{product.title}</h1>
         <div className='ps-price'>{product.price}</div>
+
+        <ProductDetailImages product={product} isExpanded={isExpanded} />
+
         <div className='ps-colors'>{product.colors}</div>
             {product.sizes ?
                 <>
