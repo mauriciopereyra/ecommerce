@@ -80,10 +80,11 @@
 
 .ps-buttons-group button:nth-child(1) {
     flex-grow: 1;
+    align-items: center;
 }
 
 .ps-buttons-group button:nth-child(2) {
-    flex-basis: 10%;
+    flex-basis: 20%;
 }
 
 .ps-notes {
@@ -116,5 +117,5 @@
         width:100%;
         position:static;
     }
-    
+
 }
