@@ -4,6 +4,7 @@
     cursor: pointer;
     border: 1px solid white;
     transition: 0.5s ease-in-out transform;
+    width:250px;
 }
 
 .product-listing-hidden {
@@ -68,6 +69,10 @@
 }
 
 /* Big style */
+.big .product-listing {
+    width:350px;
+}
+
 .big .product-listing-image {
     height:350px;
     width:350px;
@@ -110,7 +115,8 @@
 @media screen and (max-width:1000px){
     .product-listing {
         margin-right: 0.4rem;
-    }
+        width:150px;
+}
 
     .product-listing-image {
         height:150px;
@@ -118,6 +124,10 @@
     }
 
     /* Big style */
+    .big .product-listing {
+        width:230px;
+    }
+
     .big .product-listing-image {
         height:230px;
         width:230px;

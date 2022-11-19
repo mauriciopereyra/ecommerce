@@ -10,6 +10,8 @@ import { addCart } from './redux/cartActions'
 import Row from './Row'
 import scrappedItems from './data/scrappedItems.json';
 import { addStillInterested } from './redux/stillInterestedActions'
+import { filterProducts } from './functions/filterProducts'
+
 
 
 const ProductDetail = () => {
@@ -27,6 +29,13 @@ const ProductDetail = () => {
                     <img src={image}></img>
                 </div>
             )
+        })
+    }
+
+    const renderRows = () => {
+        const rowTitles = ["YOU MAY ALSO LIKE","OTHERS ALSO BOUGHT","COMPLETE THE LOOK"] 
+        return product.categories.map((category,index) => {
+            return <Row type='product' title={rowTitles[index]} items={filterProducts(category,8)} />
         })
     }
 
@@ -55,8 +64,7 @@ const ProductDetail = () => {
                         </div>
                     : ""
                     }
-                <Row type='product' title="YOU MAY ALSO LIKE" items={productsList.concat(productsList)} />
-                <Row type='product' title="OTHERS ALSO BOUGHT" items={productsList.concat(productsList)} />
+                {renderRows()}
             </div>
             <ProductDetailSide product={product} />
         </div>
