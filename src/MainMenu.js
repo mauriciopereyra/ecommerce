@@ -1,18 +1,46 @@
 import './MainMenu.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { categoryLink } from './functions/categoryLink'
+import { useEffect, useState } from 'react'
+
+const MainMenuItem = (props) => {
+    const [ isHovered, setIsHovered ] = useState(false)
+    const location = useLocation()
+
+    useEffect(() => {
+        setIsHovered(false)
+    },[location])
+
+    return (<div 
+        onMouseEnter={() => {setIsHovered(true)}}
+        onMouseLeave={() => {setIsHovered(false)}}
+    {...props} className={`${props.className} ${isHovered ? "hover":""}`}>
+        {props.children}
+    </div>)
+}
 
 const MainMenu = (props) => {
+
+    const handleMouseEnter = (e) => {
+        console.log(e.target)
+        e.target.classList.add("hover")
+        
+    }
+    const handleMouseLeave = (e) => {
+        console.log(e.target)
+        e.target.classList.remove("hover")
+    }
 
     const renderMainMenu = (items) => {
         return items.map((item,index) => {
             return (
-            <div key={index} className={`main-menu-item ${item.style ? item.style : ""}`}>
+                <MainMenuItem key={index} className={`main-menu-item ${item.style ? item.style : ""}`}>               
                 <Link to={categoryLink(item.title)}>{item.title}</Link>
                 {item.subcategories.length ?
                 <>
                     <div className="main-menu-category-container">
-                        <div className="main-menu-category">
+                        <div className="main-menu-category"
+                        >
                             <div className="main-menu-category-wrapper">
                                 {renderSubcategories(item.subcategories,item.bottomItems,item.title)}
                             </div>
@@ -28,7 +56,7 @@ const MainMenu = (props) => {
                     </div>
                 </>
                 : "" }
-            </div>
+            </MainMenuItem>
             )
         })
     }

@@ -15,7 +15,7 @@
     border-bottom: solid black 0.2rem
 }
 
-.main-menu-item:hover .main-menu-category, .main-menu-category:hover {
+.main-menu-item.hover .main-menu-category {
     display: flex;
     visibility: visible;
 }
