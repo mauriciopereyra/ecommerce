@@ -1,4 +1,4 @@
-import toggleHeader from './functions/toggleHeader'
+import toggleHeader, { showHeader } from './functions/toggleHeader'
 import './Header.css'
 import HeaderIcons from './HeaderIcons'
 import MainMenu from './MainMenu'
@@ -7,19 +7,30 @@ import { headerPromo } from './data/promos'
 import { menu } from './data/icons'
 import ResponsiveMenu from './ResponsiveMenu'
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 
 const Header = (props) => {
     const [ isMenuOpen, setMenuOpen ] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
-    toggleHeader(window)
+    const params = useParams()
 
     const renderTopRow = (items) => {
         return items.map((item,index) => {
             return <li key={index}><a href='#'>{item}</a></li>
         })
     }
+
+
+    useEffect(() => {
+        toggleHeader(window)
+    },[])
+
+    useEffect(() => {
+        setMenuOpen(false)
+        showHeader(window)
+    },[location])
+
 
     return (
         <>
