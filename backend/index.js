@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
+var cors = require('cors')
 
 mongoose.connect('mongodb://127.0.0.1:27017/ecommerce');
 
@@ -31,6 +32,7 @@ db.once('connected', () => {
     console.log('Database Connected');
 })
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
@@ -52,7 +54,7 @@ app.use('/category/:categories', (req,res) => {
         if (err) {res.send(err)} else {
             res.send(docs)
         }
-    }).limit(8)
+    }).limit(req.query.limit || 8)
 
 })
 

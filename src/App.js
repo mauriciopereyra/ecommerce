@@ -1,6 +1,5 @@
 import './App.css';
 import Row from './Row'
-import productsList from './data/productsList';
 import Banner from './Banner';
 import { banner_11, banner_adiclub, banner_members, banner_thebe } from './data/banners'
 import { kidCards, menCards, womenCards } from './data/categoryCards';
@@ -24,7 +23,7 @@ import Category from './Category';
 import Wishlist from './Wishlist';
 import { useSelector } from 'react-redux';
 import Cart from './Cart';
-import { filterProducts } from './functions/filterProducts';
+import { getCategory } from './functions/apiCalls';
 
 function App() {
 
@@ -42,9 +41,9 @@ function App() {
           <Banner button='black' banner={banner_members} style='banner-with-video' link="/category/men+featured+adiclub member exclusives" />
           { stillInterested.items.length ? <Row type='product' title="Still interested?" style={'big'} items={stillInterested.items.slice(0,12)} /> : "" }
           <Row type='category' title={["WOMEN","MEN"]} style={'indented'} items={[womenCards, menCards]} />
-          <Row type='product' title={["New Arrivals","What's trending"]} style={'indented'} items={[filterProducts("new arrivals",12),filterProducts("clothing",12)]} />
+          {/* <Row type='product' title={["New Arrivals","What's trending"]} style={'indented'} items={[getCategory("new arrivals"),getCategory("clothing")]} /> */}
           <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />
-          <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={filterProducts("sportswear",12)} />
+          {/* <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={getCategory("sportswear")} /> */}
           <Row type='teaser' title="TRENDING" style={'indented wrapped'} items={trendingCards} />
           <LinksGroup title="NOW POPULAR IN MEN'S" items={linksGroups1} />
           <ArticlesContainer items={[article1,article2]} />

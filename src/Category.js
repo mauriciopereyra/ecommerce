@@ -1,11 +1,10 @@
 import './Category.css'
-import productsList, { scrappedProducts } from './data/productsList'
 import ProductListing from './ProductListing'
 import Pagination from './Pagination'
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
+import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
 import CategoryBreadcrums from './CategoryBreadcrums';
-import scrappedItems from './data/scrappedItems.json';
+import { getCategory } from './functions/apiCalls';
 
 const Category = () => {
 
@@ -16,17 +15,17 @@ const Category = () => {
     const selectedCategories = categoryName.split("+").map(category => category.toLowerCase())
     const subCategoryName = selectedCategories.at(-1).toUpperCase()
     const navigate = useNavigate()
+    const location = useLocation()
 
-    const items = scrappedItems.filter(item => {
-        var matchesCategories = true
-        for (let category of selectedCategories) {
-            if (!item.categories.some(categories => categories.toLowerCase() === category.toLowerCase())){
-                matchesCategories = false
-                break
-            }
-        }
-        return matchesCategories
-    })
+    const [ items, setItems ] = useState([])
+    const [ loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setLoading(true)
+        getCategory(selectedCategories,300).then(resp => {
+            setItems(resp.data)
+        }).then(() => setLoading(false))
+    },[location])
 
     const itemsPerPage = 16
     const itemsInPage = items.slice((currentPage-1)*itemsPerPage, itemsPerPage+(currentPage-1)*itemsPerPage);
@@ -54,6 +53,7 @@ const Category = () => {
             <div className='category-products'>
                 {items.length ?
                 renderListings(itemsInPage) :
+                loading ? "" :
                 <h1>No products available in this category</h1>
             }
             </div>
