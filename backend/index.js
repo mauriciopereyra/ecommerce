@@ -46,10 +46,9 @@ app.use('/item/:id', (req,res) => {
 
 app.use('/category/:categories', (req,res) => {
 
-    const categories = req.params.categories.split(",").map(category => {
-        return new RegExp(`${category}`,'i')
+    const categories = decodeURIComponent(req.params.categories).split(",").map(category => {
+        return new RegExp(`${category.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')}`,'i')
     })
-
     items.find({categories: {$all:categories}},(err,docs) => {
         if (err) {res.send(err)} else {
             res.send(docs)

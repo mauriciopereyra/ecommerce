@@ -43,7 +43,7 @@ function App() {
           <Row type='category' title={["WOMEN","MEN"]} style={'indented'} items={[womenCards, menCards]} />
           {/* <Row type='product' title={["New Arrivals","What's trending"]} style={'indented'} items={[getCategory("new arrivals"),getCategory("clothing")]} /> */}
           <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />
-          {/* <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={getCategory("sportswear")} /> */}
+          {/* <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={() => getCategory("sportswear")} /> */}
           <Row type='teaser' title="TRENDING" style={'indented wrapped'} items={trendingCards} />
           <LinksGroup title="NOW POPULAR IN MEN'S" items={linksGroups1} />
           <ArticlesContainer items={[article1,article2]} />
