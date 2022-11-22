@@ -1,6 +1,8 @@
-# Ecommerce React and Redux
+# Ecommerce React, Redux, Express, MongoDB, NodeJS
 
 Ecommerce website using React and basing the design on Adidas' website.
+
+Backend uses Express and MongoDB
 
 Items scrapped from source website using Python Selenium
 
