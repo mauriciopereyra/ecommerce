@@ -39,11 +39,11 @@ function App() {
           <Banner banner={banner_adiclub} textColor={'white'} style='banner-small' link="/category/men+featured+adiclub member exclusives" />
           <Banner banner={banner_11} textColor={'white'} link="/category/outlet" />
           <Banner button='black' banner={banner_members} style='banner-with-video' link="/category/men+featured+adiclub member exclusives" />
-          { stillInterested.items.length ? <Row type='product' title="Still interested?" style={'big'} items={stillInterested.items.slice(0,12)} /> : "" }
+          { stillInterested.items.length ? <Row type='stillInterested' title="Still interested?" style={'big'} items={stillInterested.items.slice(0,12)} /> : "" }
           <Row type='category' title={["WOMEN","MEN"]} style={'indented'} items={[womenCards, menCards]} />
-          {/* <Row type='product' title={["New Arrivals","What's trending"]} style={'indented'} items={[getCategory("new arrivals"),getCategory("clothing")]} /> */}
+          <Row type='product' title={["New Arrivals","What's trending"]} style={'indented'} items={["new arrivals","clothing"]} />
           <Row type='teaser' title="WHAT'S HOT" style={'indented wrapped'} items={whatsHotCards} />
-          {/* <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={() => getCategory("sportswear")} /> */}
+          <Row type='product' title="BEST OF ADIDAS" style={'indented'} items={"sportswear"} />
           <Row type='teaser' title="TRENDING" style={'indented wrapped'} items={trendingCards} />
           <LinksGroup title="NOW POPULAR IN MEN'S" items={linksGroups1} />
           <ArticlesContainer items={[article1,article2]} />

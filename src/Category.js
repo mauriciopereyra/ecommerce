@@ -22,13 +22,15 @@ const Category = () => {
 
     useEffect(() => {
         setLoading(true)
+        setItems([])
         getCategory(selectedCategories,300).then(resp => {
+            console.log(resp.data)
             setItems(resp.data)
         }).then(() => setLoading(false))
     },[location])
 
     const itemsPerPage = 16
-    const itemsInPage = items.slice((currentPage-1)*itemsPerPage, itemsPerPage+(currentPage-1)*itemsPerPage);
+    const itemsInPage = items.length ? items.slice((currentPage-1)*itemsPerPage, itemsPerPage+(currentPage-1)*itemsPerPage) : 0
     
     const totalPages = Math.ceil(items.length / itemsPerPage)
 
@@ -53,7 +55,7 @@ const Category = () => {
             <div className='category-products'>
                 {items.length ?
                 renderListings(itemsInPage) :
-                loading ? "" :
+                loading ? "LOADING..." :
                 <h1>No products available in this category</h1>
             }
             </div>

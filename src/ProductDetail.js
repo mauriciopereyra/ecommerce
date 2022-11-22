@@ -8,7 +8,7 @@ import { addCart } from './redux/cartActions'
 import Row from './Row'
 import { addStillInterested } from './redux/stillInterestedActions'
 import ProductDetailImages from './ProductDetailImages'
-import { getItem } from './functions/apiCalls'
+import { getCategory, getItem } from './functions/apiCalls'
 
 const ProductDetail = () => {
 
@@ -24,12 +24,12 @@ const ProductDetail = () => {
 
     const dispatcher = useDispatch()
 
-    // const renderRows = () => {
-    //     const rowTitles = ["YOU MAY ALSO LIKE","OTHERS ALSO BOUGHT","COMPLETE THE LOOK"] 
-    //     return product.categories.map((category,index) => {
-    //         return <Row type='product' title={rowTitles[index]} items={filterProducts(category,8)} />
-    //     })
-    // }
+    const renderRows = () => {
+        const rowTitles = ["YOU MAY ALSO LIKE","OTHERS ALSO BOUGHT","COMPLETE THE LOOK"] 
+        return product.categories.map((category,index) => {
+            return <Row type='product' title={rowTitles[index]} items={product.categories.slice(0,index+1).join(",")} random={true} />
+        })
+    }
 
 
     return (
@@ -37,7 +37,7 @@ const ProductDetail = () => {
             <div className="product-detail">
                 <div className="product-main">
                     <ProductDetailImages product={product} />
-                    {/* {renderRows()} */}
+                    {renderRows()}
                 </div>
                 <ProductDetailSide product={product} />
             </div>

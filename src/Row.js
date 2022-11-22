@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from 'react'
 import CategoryCard from "./CategoryCard"
 import TeaserCard from "./TeaserCard"
 import { styleInfo } from "./functions/productsSlider"
+import { getCategory } from "./functions/apiCalls"
+import { useLocation, useParams } from "react-router-dom"
 
 const Row = (props) => {
    
@@ -14,7 +16,9 @@ const Row = (props) => {
     const nextPage = () => changePage(currentPage+1)
     const container = useRef()
     const [offset, setOffset] = useState(0)
-    const [ sliderButtonsVisible, setSliderButtonsVisible] = useState(false)
+    const [ sliderButtonsVisible, setSliderButtonsVisible] = useState(true)
+    const location = useLocation()
+    const params = useParams()
 
     const changePage = (newPage) => {
         const [page, offset, shouldBeVisible] = styleInfo(props,window,activeTab,container,currentPage,newPage)
@@ -25,12 +29,32 @@ const Row = (props) => {
 
     useEffect(() =>  {
         changePage(0)
-    },[activeTab])
+    },[activeTab,location,params])
 
-    const renderListings = (items,tab=0) => {
+    useEffect(() =>  {
+        setTimeout(() => {
+            changePage(0)
+        }, 2000);
+    },[activeTab,location,params])
+
+    const RenderListings = (items,tab=0) => {
         const style = {'transform':`translateX(${-offset}px)`}
-        
-        return items.map((item,index) => {
+        const [_items, setItems] = useState([])
+        const location = useLocation()
+
+        useEffect(() => {
+            const isRandom = props.random ? true : false
+
+            if (props.type == 'product'){
+                getCategory(items,null,isRandom).then(res => setItems(res.data))
+            } else {
+                setItems(items)
+            }
+        },[location])
+
+
+
+        return _items.map((item,index) => {
             switch (item.type) {
                 case 'category':
                     return <CategoryCard key={index} visible={activeTab == tab} currentPage={currentPage} item={item} style={style} /> 
@@ -55,9 +79,9 @@ const Row = (props) => {
 
     const renderRows = (rows) => {
         if (Array.isArray(props.title)){
-            return rows.map((row, index) => renderListings(row,index))
+            return rows.map((row, index) => RenderListings(row,index))
         } else {
-            return renderListings(rows)
+            return RenderListings(rows)
         }
     }
 
